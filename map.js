@@ -1,23 +1,23 @@
-var ctx = null,
+let ctx = null,
     tileW = 40, tileH = tileW,
     mapW = 20, mapH = 20,
     mapSW = mapW*tileW, mapSH = mapH*tileH,
     currentSecond = 0, frameCount = 0, framesLastSecond = 0,
     lastFrameTime = 0;
-var keysDown = {
+let keysDown = {
     37: false,
     38: false,
     39: false,
     40: false
 };
 
-var  floorTypes ={
+let  floorTypes ={
   solid   : 0,
   path    : 1,
   water   : 2
 };
 
-var tileTypes = {
+let tileTypes = {
   0: {colour:"#685b48", floor:floorTypes.solid},//стена
   1: {colour:"#5aa457", floor:floorTypes.path},//трава
   2: {colour:"#e8bd7a", floor:floorTypes.path},//дорога
@@ -30,8 +30,8 @@ var tileTypes = {
   9: {colour:"#", floor:floorTypes.path}//огонь
 };
 
-var player = new Character();
-var gameMap0 =[
+let player = new Character();
+let gameMap0 =[
     0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 2, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 2, 2, 0,
     0, 2, 3, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 2, 2, 0,
@@ -53,7 +53,7 @@ var gameMap0 =[
     0, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 4, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ];
-var viewport = {
+let viewport = {
   screen    :[0, 0],
   startTile :[0, 0],
   endTile   :[0, 0],
@@ -83,7 +83,7 @@ var viewport = {
     }
   }
 };
-var gameMap1 =[
+let gameMap1 =[
       1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -120,12 +120,12 @@ Character.prototype.processMovement = function(t){
       this.position[0] = (this.tileFrom[0]*tileW)+ ((tileW - this.dimensions[0])/2);
       this.position[1] = (this.tileFrom[1]*tileH)+ ((tileH - this.dimensions[1])/2);
       if(this.tileTo[0] != this.tileFrom[0]){
-        var diff = (tileW / this.delayMove)*(t - this.timeMoved);
+        let diff = (tileW / this.delayMove)*(t - this.timeMoved);
         this.position[0] += (this.tileTo[0]<this.tileFrom[0] ?
         0 - diff : diff);
       }
       if(this.tileTo[1] != this.tileFrom[1]){
-        var diff = (tileH / this.delayMove)*(t - this.timeMoved);
+        let diff = (tileH / this.delayMove)*(t - this.timeMoved);
         this.position[1] += (this.tileTo[1]<this.tileFrom[1] ?
         0 - diff : diff);
       }
@@ -201,9 +201,9 @@ function drawGame(){
     if(ctx == null){
       return;
     }
-    var currentFrameTime = Date.now(),
+    let currentFrameTime = Date.now(),
         timeElapsed = currentFrameTime -lastFrameTime;
-    var sec = Math.floor(Date.now()/1000);
+    let sec = Math.floor(Date.now()/1000);
     if(sec!= currentSecond){
       currentSecond = sec;
       framesLastSecond = frameCount;
@@ -235,8 +235,8 @@ function drawGame(){
     ctx.fillStyle ="#000000"
     ctx.fillRect(0, 0, viewport.screen[0], viewport.screen[1]);
 
-    for(var y = viewport.startTile[1]; y <=viewport.endTile[1]; y++){
-      for(var x = viewport.startTile[0]; x <=viewport.endTile[0]; x++){
+    for(let y = viewport.startTile[1]; y <=viewport.endTile[1]; y++){
+      for(let x = viewport.startTile[0]; x <=viewport.endTile[0]; x++){
         ctx.fillStyle = tileTypes[gameMap0[toIndex(x, y)]].colour;
         ctx.fillRect(viewport.offset[0] + x*tileW, viewport.offset[1] + y*tileH, tileW, tileH);
       }
