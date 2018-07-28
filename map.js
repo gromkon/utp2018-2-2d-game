@@ -1,3 +1,4 @@
+"use strict";
 let ctx = null,
     tileW = 40, tileH = tileW,
     mapW = 20, mapH = 20,
