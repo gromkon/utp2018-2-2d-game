@@ -6,6 +6,12 @@ mapW[0] = 25;
 mapH[0] = 25;
 mapW[1] = 10;
 mapH[1] = 11;
+mapW[2] = 10;
+mapH[2] = 11;
+mapW[3] = 10;
+mapH[3] = 11;
+mapW[4] = 10;
+mapH[4] = 11;
 let ctx = null,
     tileW = 40, tileH = 40,    
     currentSecond = 0, frameCount = 0, framesLastSecond = 0,
@@ -26,7 +32,7 @@ let directions = {
   left  : 3
 };
 
-let  floorTypes ={
+let  floorTypes = {
   solid   : 0,
   path    : 1,
   water   : 2,
@@ -72,19 +78,88 @@ let player = new Character();
 let tileEvents = {}
 
 tileEvents[0] = {
-  138 : function(c){
-    if(player.direction == directions.right){
+  138 : function(c) {
+    if(player.direction == directions.right) {
       mapNo = 1;
       c.placeAt(0,5);
     }
   },
+  235 : function(c) {
+    if(player.direction == directions.up) {
+      mapNo = 2;
+      c.placeAt(8,9);
+    }
+  },
+  293 : function(c) {
+    if(player.direction == directions.up) {
+      mapNo = 3;
+      c.placeAt(4,9);
+    }
+  },
+  294 : function(c) {
+    if(player.direction == directions.up) {
+      mapNo = 3;
+      c.placeAt(5,9);
+    }
+  },
+  468 : function(c) {
+    if(player.direction == directions.up) {
+      mapNo = 4;
+      c.placeAt(4,9);
+    }
+  },
+  469 : function(c){
+    if(player.direction == directions.up) {
+      mapNo = 4;
+      c.placeAt(5,9);
+    }
+  }
 };
 
 tileEvents[1] = {
-  50 : function(c){
-    if(player.direction == directions.left){
+  50 : function(c) {
+    if(player.direction == directions.left) {
       mapNo = 0;
       c.placeAt(13,5);
+    }
+  }
+};
+
+tileEvents[2] = {
+  98 : function(c) {
+    if(player.direction == directions.down) {
+      mapNo = 0;
+      c.placeAt(10,9);
+    }
+  }
+};
+
+tileEvents[3] = {
+  104 : function(c) {
+    if(player.direction == directions.down) {
+      mapNo = 0;
+      c.placeAt(18,11);
+    }
+  },
+  105 : function(c) {
+    if(player.direction == directions.down) {
+      mapNo = 0;
+      c.placeAt(19,11);
+    }
+  }
+};
+
+tileEvents[4] = {
+  104 : function(c) {
+    if(player.direction == directions.down) {
+      mapNo = 0;
+      c.placeAt(18,18);
+    }
+  },
+  105 : function(c) {
+    if(player.direction == directions.down) {
+      mapNo = 0;
+      c.placeAt(19,18);
     }
   }
 };
@@ -100,7 +175,7 @@ let gameMap = {};
     0, 2, 7, 4, 4, 4, 4, 4, 7, 7, 1, 1, 2, 1, 0, 0, 1, 1, 1, 1, 1, 6, 6, 2, 0,
     0, 2, 7, 4, 4, 4, 4, 7, 7, 0, 0, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 0,
     0, 2, 7, 7, 4, 4, 7, 7, 1, 0, 0, 1, 2, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 2, 0,
-    0, 2, 7, 7, 7, 4, 7, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 2, 0,
+    0, 2, 7, 7, 7, 4, 7, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 2, 0,
     0, 2, 1, 1, 1, 4, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 1, 0, 0, 0, 0, 1, 1, 2, 0,
     0, 2, 1, 1, 1, 4, 1, 1, 1, 1, 2, 2, 2, 2, 2, 1, 5, 5, 2, 2, 5, 5, 1, 2, 0,
     0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
@@ -130,6 +205,48 @@ gameMap[1] =[
      0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
      0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
      0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+];
+
+gameMap[2] = [
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  2, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 2, 0,
+];
+
+gameMap[3] = [
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 0, 0, 0, 2, 2, 0, 0, 0, 0,
+];
+
+gameMap[4] = [
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 2, 2, 2, 2, 2, 2, 2, 2, 0,
+  0, 0, 0, 0, 2, 2, 0, 0, 0, 0,
 ];
 
 let viewport = {
@@ -270,29 +387,29 @@ Character.prototype.canMoveDirection = function(d){
   }
 };
 
-Character.prototype.MoveLeft = function(t){
+Character.prototype.MoveLeft = function(t) {
   this.tileTo[0]--;
   this.timeMoved = t;
   this.direction = directions.left;
 };
-Character.prototype.MoveRight = function(t){
+Character.prototype.MoveRight = function(t) {
   this.tileTo[0]++;
   this.timeMoved = t;
   this.direction = directions.right;
 };
-Character.prototype.MoveDown = function(t){
+Character.prototype.MoveDown = function(t) {
   this.tileTo[1]++;
   this.timeMoved = t;
   this.direction = directions.down;
 };
-Character.prototype.MoveUp = function(t){
+Character.prototype.MoveUp = function(t) {
   this.tileTo[1]--;
   this.timeMoved = t;
   this.direction = directions.up;
 };
 
-Character.prototype.moveDirection = function(d , t){
-  switch(d){
+Character.prototype.moveDirection = function(d , t) {
+  switch(d) {
     case directions.up:
       return this.MoveUp(t);
     case directions.down:
@@ -315,13 +432,13 @@ window.onload = function() {
     requestAnimationFrame(drawGame);
     
     window.addEventListener("keydown", function(e) {
-      if((e.keyCode>=37 && e.keyCode<=40)||(e.keyCode==16)) {
+      if((e.keyCode >= 37 && e.keyCode <= 40) || (e.keyCode == 16)) {
         keysDown[e.keyCode] = true;
       }
     });
     
     window.addEventListener("keyup", function(e) {
-      if((e.keyCode>=37 && e.keyCode<=40)||(e.keyCode==16)){
+      if((e.keyCode >= 37 && e.keyCode <= 40)||(e.keyCode == 16)) {
         keysDown[e.keyCode] = false;
       }
     });
@@ -331,7 +448,7 @@ window.onload = function() {
       document.getElementById('game').height
     ];
     
-    hero.onerror = function(){
+    hero.onerror = function() {
       ctx = null;
       alert("Не получилось загрузить спрайт");
     };
@@ -354,16 +471,16 @@ function drawGame() {
     }
     else frameCount++;
     
-    if(keysDown[16]){
-      player.delayMove= 75;
+    if(keysDown[16]) {
+      player.delayMove = 75;
     }
-    else{
-      player.delayMove= 150;
+    else {
+      player.delayMove = 150;
     }
     
     if(!player.processMovement(currentFrameTime)) {
       if(keysDown[38]) {
-        if(player.direction!=directions.up){
+        if(player.direction != directions.up) {
           player.direction = directions.up;
         }
         else
