@@ -22,7 +22,8 @@ let keysDown = {
     37: false,
     38: false,
     39: false,
-    40: false
+    40: false,
+    101: false
 };
 
 let directions = {
@@ -48,6 +49,9 @@ let water = new Image(),
     ice = new Image(),
     sand = new Image(),
     bush = new Image(),
+    objectTree = new Image(),
+    stone = new Image(),
+    tallGrass = new Image(),
     hero = new Image();
 
 water.src = 'sprites/water.jpg';
@@ -60,6 +64,9 @@ ice.src = 'sprites/ice.jpg';
 sand.src = 'sprites/sand.jpg';
 bush.src = 'sprites/bush.jpg';
 hero.src = 'sprites/hero.png';
+tallGrass.src = 'sprites/grass.png';
+stone.src = 'sprites/stone.png';
+objectTree.src = 'sprites/tree.png';
 
 let tileTypes = {
   0: {floor:floorTypes.solid, sprite: wall}, //стена
@@ -73,96 +80,92 @@ let tileTypes = {
   8: {floor:floorTypes.ice, sprite: ice} //лед
 };
 
+function Tile(tx, ty, tt){
+  this.x          = tx;
+  this.y          = ty;
+  this.type       = tt;
+  this.eventEnter = null;
+  this.object     = null;
+}
+
+function TileMap() {
+  this.map   = [];
+  this.w     = 0;
+  this.h     = 0;
+  this.layar = 4;
+}
+
+TileMap.prototype.buildMapFromData = function(d, w, h) {
+  this.w = w;
+  this.h = h;
+  if(d.length != (w*h)) {
+    return false;
+  }
+  this.map.length = 0;
+  for(let y = 0; y < h; y++) {
+    for(let x = 0; x < w; x++) {
+      this.map.push(new Tile(x, y, d[((y*w) + x)]));
+    }
+  }
+  return true;
+}
+
+let objectCollision = {
+  none     : 0,
+  solid    : 1,
+  moveable : 2
+};
+
+let objectTypes = {
+  1 : {
+    name : "Tree",
+    sp : objectTree,
+    sprite : [{x:0, y:0, w:80, h:100}],
+    offset : [-20, -60],
+    collision : objectCollision.solid,
+    zIndex : 3
+  },
+  2 : {
+    name : "Tall Grass",
+    sp : tallGrass,
+    sprite : [{x:0, y:0, w:40, h:50}],
+    offset : [0, -10],
+    collision : objectCollision.none,
+    zIndex : 2
+  },
+  3 : {
+    name : "Stone",
+    sp : stone,
+    sprite : [{x:0, y:0, w:40, h:44}],
+    offset : [0,-4],
+    collision : objectCollision.solid,
+    zIndex : 2
+  }
+}
+
+function MapObject(a) {
+  this.x    = 0;
+  this.y    = 0;
+  this.type = a;
+}
+
+MapObject.prototype.placeAt = function(nx, ny, mapN) {
+  if(mapTileData[mapN].map[toIndex(this.x, this.y)].object == this){
+    mapTileData[mapN].map[toIndex(this.x, this.y)].object = null;
+  }
+  this.x = nx;
+  this.y = ny;
+  mapTileData[mapN].map[toIndex(nx, ny)].object = this;
+};
+
+let mapTileData = {}
+mapTileData[0] = new TileMap();
+mapTileData[1] = new TileMap();
+mapTileData[2] = new TileMap();
+mapTileData[3] = new TileMap();
+mapTileData[4] = new TileMap();
+
 let player = new Character();
-
-let tileEvents = {}
-
-tileEvents[0] = {
-  138 : function(c) {
-    if(player.direction == directions.right) {
-      mapNo = 1;
-      c.placeAt(0,5);
-    }
-  },
-  235 : function(c) {
-    if(player.direction == directions.up) {
-      mapNo = 2;
-      c.placeAt(8,9);
-    }
-  },
-  293 : function(c) {
-    if(player.direction == directions.up) {
-      mapNo = 3;
-      c.placeAt(4,9);
-    }
-  },
-  294 : function(c) {
-    if(player.direction == directions.up) {
-      mapNo = 3;
-      c.placeAt(5,9);
-    }
-  },
-  468 : function(c) {
-    if(player.direction == directions.up) {
-      mapNo = 4;
-      c.placeAt(4,9);
-    }
-  },
-  469 : function(c){
-    if(player.direction == directions.up) {
-      mapNo = 4;
-      c.placeAt(5,9);
-    }
-  }
-};
-
-tileEvents[1] = {
-  50 : function(c) {
-    if(player.direction == directions.left) {
-      mapNo = 0;
-      c.placeAt(13,5);
-    }
-  }
-};
-
-tileEvents[2] = {
-  98 : function(c) {
-    if(player.direction == directions.down) {
-      mapNo = 0;
-      c.placeAt(10,9);
-    }
-  }
-};
-
-tileEvents[3] = {
-  104 : function(c) {
-    if(player.direction == directions.down) {
-      mapNo = 0;
-      c.placeAt(18,11);
-    }
-  },
-  105 : function(c) {
-    if(player.direction == directions.down) {
-      mapNo = 0;
-      c.placeAt(19,11);
-    }
-  }
-};
-
-tileEvents[4] = {
-  104 : function(c) {
-    if(player.direction == directions.down) {
-      mapNo = 0;
-      c.placeAt(18,18);
-    }
-  },
-  105 : function(c) {
-    if(player.direction == directions.down) {
-      mapNo = 0;
-      c.placeAt(19,18);
-    }
-  }
-};
 
 let gameMap = {};
     gameMap[0] =[
@@ -286,7 +289,6 @@ let viewport = {
   }
 };
 
-
 function Character() {
   this.tileFrom = [1, 1];
   this.tileTo = [1, 1];
@@ -316,12 +318,12 @@ Character.prototype.processMovement = function(t) {
     
     if((t - this.timeMoved) >= this.delayMove) {
       this.placeAt(this.tileTo[0], this.tileTo[1]);
-        
-      if(typeof tileEvents[mapNo][toIndex(this.tileTo[0], this.tileTo[1])] != 'undefined'){
-        tileEvents[mapNo][toIndex(this.tileTo[0], this.tileTo[1])](this);
+      
+      if(mapTileData[mapNo].map[toIndex(this.tileTo[0], this.tileTo[1])].eventEnter != null){
+        mapTileData[mapNo].map[toIndex(this.tileTo[0], this.tileTo[1])].eventEnter(this);
       }
         
-      let tileFloor = tileTypes[gameMap[mapNo][toIndex(this.tileFrom[0], this.tileFrom[1])]].floor;
+      let tileFloor = tileTypes[mapTileData[mapNo].map[toIndex(this.tileFrom[0], this.tileFrom[1])]].floor;
       if(tileFloor == floorTypes.ice){
         if(this.canMoveDirection(this.direction)){
           this.moveDirection(this.direction, t);
@@ -349,17 +351,21 @@ Character.prototype.processMovement = function(t) {
     return true;
 };
 
-
 Character.prototype.canMoveTo = function(x, y) {
   if(x < 0 || x >= mapW[mapNo] || y < 0 || y >= mapH[mapNo]) {
       return false;
   }
-  if(tileTypes[gameMap[mapNo][toIndex(x, y)]].floor != floorTypes.path && tileTypes[gameMap[mapNo][toIndex(x, y)]].floor != floorTypes.ice) {
+  if(tileTypes[mapTileData[mapNo].map[toIndex(x, y)]].floor != floorTypes.path && tileTypes[mapTileData[mapNo].map[toIndex(x, y)]].floor != floorTypes.ice) {
       return false;
-  } 
+  }
+  if(mapTileData[mapNo].map[toIndex(x, y)].object != null){
+    let o = mapTileData[mapNo].map[toIndex(x, y)].object;
+    if(objectTypes[o.type].collision == objectCollision.solid){
+      return false;
+    }
+  }
   return true;
 };
-
 
 Character.prototype.canMoveLeft = function() {
   return this.canMoveTo(this.tileFrom[0] - 1, this.tileFrom[1]);
@@ -421,7 +427,6 @@ Character.prototype.moveDirection = function(d , t) {
   }
 };
 
-
 function toIndex(x, y) {
   return ((y * mapW[mapNo]) + x);
 }
@@ -432,13 +437,13 @@ window.onload = function() {
     requestAnimationFrame(drawGame);
     
     window.addEventListener("keydown", function(e) {
-      if((e.keyCode >= 37 && e.keyCode <= 40) || (e.keyCode == 16)) {
+      if((e.keyCode >= 37 && e.keyCode <= 40) || (e.keyCode == 16) || (e.keyCode==101)) {
         keysDown[e.keyCode] = true;
       }
     });
     
     window.addEventListener("keyup", function(e) {
-      if((e.keyCode >= 37 && e.keyCode <= 40)||(e.keyCode == 16)) {
+      if((e.keyCode >= 37 && e.keyCode <= 40) || (e.keyCode == 16) || (e.keyCode==101)) {
         keysDown[e.keyCode] = false;
       }
     });
@@ -452,6 +457,108 @@ window.onload = function() {
       ctx = null;
       alert("Не получилось загрузить спрайт");
     };
+    mapTileData[0].buildMapFromData(gameMap[0], mapW[0], mapH[0]);
+    mapTileData[1].buildMapFromData(gameMap[1], mapW[1], mapH[1]);
+    mapTileData[2].buildMapFromData(gameMap[2], mapW[2], mapH[2]);
+    mapTileData[3].buildMapFromData(gameMap[3], mapW[3], mapH[3]);
+    mapTileData[4].buildMapFromData(gameMap[4], mapW[4], mapH[4]);
+
+    mapTileData[0].map[((5*mapW[0]) + 13)].eventEnter = function(c){
+      if(player.direction == directions.right){
+        mapNo = 1;
+        c.placeAt(0,5);
+      }
+    };
+
+    mapTileData[0].map[((9*mapW[0]) + 10)].eventEnter = function(c){
+      if(player.direction == directions.up){
+        mapNo = 2;
+        c.placeAt(8,9);
+      }
+    };
+
+    mapTileData[0].map[((11*mapW[0]) + 18)].eventEnter = function(c){
+      if(player.direction == directions.up){
+        mapNo = 3;
+        c.placeAt(4,9);
+      }
+    };
+
+    mapTileData[0].map[((11*mapW[0]) + 19)].eventEnter = function(c){
+      if(player.direction == directions.up){
+        mapNo = 3;
+        c.placeAt(5,9);
+      }
+    };
+
+    mapTileData[0].map[((18*mapW[0]) + 18)].eventEnter = function(c){
+      if(player.direction == directions.up){
+        mapNo = 4;
+        c.placeAt(4,9);
+      }
+    };
+
+    mapTileData[0].map[((18*mapW[0]) + 19)].eventEnter = function(c){
+      if(player.direction == directions.up){
+        mapNo = 4;
+        c.placeAt(5,9);
+      }
+    };
+
+    mapTileData[1].map[((5*mapW[1]) + 0)].eventEnter = function(c){
+      if(player.direction == directions.left){
+        mapNo = 0;
+        c.placeAt(13,5);
+      }
+    };
+
+    mapTileData[2].map[((9*mapW[2]) + 8)].eventEnter = function(c){
+      if(player.direction == directions.down){
+        mapNo = 0;
+        c.placeAt(10,9);
+      }
+    };
+
+    mapTileData[3].map[((9*mapW[3]) + 4)].eventEnter = function(c){
+      if(player.direction == directions.down){
+        mapNo = 0;
+        c.placeAt(18,11);
+      }
+    };
+
+    mapTileData[3].map[((9*mapW[3]) + 5)].eventEnter = function(c){
+      if(player.direction == directions.down){
+        mapNo = 0;
+        c.placeAt(19,11);
+      }
+    };
+
+    mapTileData[4].map[((9*mapW[4]) + 4)].eventEnter = function(c){
+      if(player.direction == directions.down){
+        mapNo = 0;
+        c.placeAt(18,18);
+      }
+    };
+
+    mapTileData[4].map[((9*mapW[4]) + 5)].eventEnter = function(c){
+      if(player.direction == directions.down){
+        mapNo = 0;
+        c.placeAt(19,18);
+      }
+    };
+
+    let tree1 = new MapObject(1),
+        tree2 = new MapObject(1),
+        grass1 = new MapObject(2),
+        grass2 = new MapObject(2),
+        stone1 = new MapObject(3),
+        stone2 = new MapObject(3);
+    tree1.placeAt(2, 13, 0);
+    tree2.placeAt(9, 9, 0);
+    grass1.placeAt(2, 10, 0);
+    grass2.placeAt(2, 11, 0);
+    stone1.placeAt(2, 2, 0);
+    stone2.placeAt(7, 10, 0);
 };
 
 
@@ -524,24 +631,32 @@ function drawGame() {
 
     ctx.fillStyle ="#071408"
     ctx.fillRect(0, 0, viewport.screen[0], viewport.screen[1]);
-
-    for(let y = viewport.startTile[1]; y <= viewport.endTile[1]; y++) {
-      for(let x = viewport.startTile[0]; x <= viewport.endTile[0]; x++) {
-          
-        ctx.drawImage(tileTypes[gameMap[mapNo][toIndex(x, y)]].sprite,
-                     viewport.offset[0] + x*tileW, viewport.offset[1] + y*tileH,
-                      tileW, tileH);
+    for(let z = 0; z < mapTileData[mapNo].layar; z++) {
+      for(let y = viewport.startTile[1]; y <= viewport.endTile[1]; y++) {
+         for(let x = viewport.startTile[0]; x <= viewport.endTile[0]; x++) {
+           if(z == 0){
+               ctx.drawImage(tileTypes[mapTileData[mapNo].map[toIndex(x, y)]].sprite,
+                             viewport.offset[0] + x*tileW, viewport.offset[1] + y*tileH,
+                             tileW, tileH);
+           }
+           let o = mapTileData[mapNo].map[toIndex(x, y)].object;
+           if(o != null && objectTypes[o.type].zIndex == z){
+              let b = objectTypes[o.type];
+              ctx.drawImage(b.sp, b.sprite[0].x, b.sprite[0].y, b.sprite[0].w, b.sprite[0].h, viewport.offset[0] + (x*tileW) + b.offset[0],
+                           viewport.offset[1] + (y*tileH) + b.offset[1],
+                           b.sprite[0].w, b.sprite[0].h);
+              }
+          }
       }
-    }
-    
-    ctx.fillStyle = "#0000ff";
-    
-    let sprite = player.sprites[player.direction];
-    ctx.drawImage(hero, sprite[0].x, sprite[0].y, sprite[0].w, sprite[0].h, 
-                  viewport.offset[0] + player.position[0], 
-                  viewport.offset[1] + player.position[1], 
-                  player.dimensions[0], player.dimensions[1]);
-    
-    lastFrameTime = currentFrameTime;
-    requestAnimationFrame(drawGame);
+      if(z==1){
+          ctx.fillStyle = "#0000ff";
+          let sprite = player.sprites[player.direction];
+          ctx.drawImage(hero, sprite[0].x, sprite[0].y, sprite[0].w, sprite[0].h, 
+                       viewport.offset[0] + player.position[0], 
+                       viewport.offset[1] + player.position[1], 
+                       player.dimensions[0], player.dimensions[1]);
+     }
+  }
+  lastFrameTime = currentFrameTime;
+  requestAnimationFrame(drawGame);
 }
