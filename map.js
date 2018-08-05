@@ -323,7 +323,7 @@ Character.prototype.processMovement = function(t) {
         mapTileData[mapNo].map[toIndex(this.tileTo[0], this.tileTo[1])].eventEnter(this);
       }
         
-      let tileFloor = tileTypes[mapTileData[mapNo].map[toIndex(this.tileFrom[0], this.tileFrom[1])]].floor;
+      let tileFloor = tileTypes[mapTileData[mapNo].map[toIndex(this.tileFrom[0], this.tileFrom[1])].type].floor;
       if(tileFloor == floorTypes.ice){
         if(this.canMoveDirection(this.direction)){
           this.moveDirection(this.direction, t);
@@ -355,7 +355,7 @@ Character.prototype.canMoveTo = function(x, y) {
   if(x < 0 || x >= mapW[mapNo] || y < 0 || y >= mapH[mapNo]) {
       return false;
   }
-  if(tileTypes[mapTileData[mapNo].map[toIndex(x, y)]].floor != floorTypes.path && tileTypes[mapTileData[mapNo].map[toIndex(x, y)]].floor != floorTypes.ice) {
+  if(tileTypes[mapTileData[mapNo].map[toIndex(x, y)].type].floor != floorTypes.path && tileTypes[mapTileData[mapNo].map[toIndex(x, y)].type].floor != floorTypes.ice) {
       return false;
   }
   if(mapTileData[mapNo].map[toIndex(x, y)].object != null){
@@ -545,7 +545,7 @@ window.onload = function() {
         mapNo = 0;
         c.placeAt(19,18);
       }
-    };
+    }; 
 
     let tree1 = new MapObject(1),
         tree2 = new MapObject(1),
