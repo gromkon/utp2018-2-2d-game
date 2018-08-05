@@ -635,9 +635,9 @@ function drawGame() {
       for(let y = viewport.startTile[1]; y <= viewport.endTile[1]; y++) {
          for(let x = viewport.startTile[0]; x <= viewport.endTile[0]; x++) {
            if(z == 0){
-               ctx.drawImage(tileTypes[mapTileData[mapNo].map[toIndex(x, y)]].sprite,
-                             viewport.offset[0] + x*tileW, viewport.offset[1] + y*tileH,
-                             tileW, tileH);
+               ctx.drawImage(tileTypes[mapTileData[mapNo].map[toIndex(x, y)].type].sprite,
+                         viewport.offset[0] + x*tileW, viewport.offset[1] + y*tileH,
+                          tileW, tileH);
            }
            let o = mapTileData[mapNo].map[toIndex(x, y)].object;
            if(o != null && objectTypes[o.type].zIndex == z){
