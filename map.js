@@ -323,7 +323,7 @@ Character.prototype.processMovement = function(t) {
         mapTileData[mapNo].map[toIndex(this.tileTo[0], this.tileTo[1])].eventEnter(this);
       }
         
-      let tileFloor = tileTypes[mapTileData[mapNo].map[toIndex(this.tileFrom[0], this.tileFrom[1])]].floor;
+      let tileFloor = tileTypes[mapTileData[mapNo].map[toIndex(this.tileFrom[0], this.tileFrom[1])].type].floor;
       if(tileFloor == floorTypes.ice){
         if(this.canMoveDirection(this.direction)){
           this.moveDirection(this.direction, t);
@@ -355,7 +355,7 @@ Character.prototype.canMoveTo = function(x, y) {
   if(x < 0 || x >= mapW[mapNo] || y < 0 || y >= mapH[mapNo]) {
       return false;
   }
-  if(tileTypes[mapTileData[mapNo].map[toIndex(x, y)]].floor != floorTypes.path && tileTypes[mapTileData[mapNo].map[toIndex(x, y)]].floor != floorTypes.ice) {
+  if(tileTypes[mapTileData[mapNo].map[toIndex(x, y)].type].floor != floorTypes.path && tileTypes[mapTileData[mapNo].map[toIndex(x, y)].type].floor != floorTypes.ice) {
       return false;
   }
   if(mapTileData[mapNo].map[toIndex(x, y)].object != null){
@@ -545,7 +545,7 @@ window.onload = function() {
         mapNo = 0;
         c.placeAt(19,18);
       }
-    };
+    }; 
 
     let tree1 = new MapObject(1),
         tree2 = new MapObject(1),
@@ -635,9 +635,9 @@ function drawGame() {
       for(let y = viewport.startTile[1]; y <= viewport.endTile[1]; y++) {
          for(let x = viewport.startTile[0]; x <= viewport.endTile[0]; x++) {
            if(z == 0){
-               ctx.drawImage(tileTypes[mapTileData[mapNo].map[toIndex(x, y)]].sprite,
-                             viewport.offset[0] + x*tileW, viewport.offset[1] + y*tileH,
-                             tileW, tileH);
+               ctx.drawImage(tileTypes[mapTileData[mapNo].map[toIndex(x, y)].type].sprite,
+                         viewport.offset[0] + x*tileW, viewport.offset[1] + y*tileH,
+                          tileW, tileH);
            }
            let o = mapTileData[mapNo].map[toIndex(x, y)].object;
            if(o != null && objectTypes[o.type].zIndex == z){
