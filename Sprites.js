@@ -1,0 +1,27 @@
+let water = new Image(),
+    path = new Image(),
+    grass = new Image(),
+    wall = new Image(),
+    tree = new Image(),
+    snow = new Image(),
+    ice = new Image(),
+    sand = new Image(),
+    bush = new Image(),
+    objectTree = new Image(),
+    stone = new Image(),
+    tallGrass = new Image(),
+    hero = new Image();
+
+water.src = 'sprites/water.jpg';
+path.src = 'sprites/path.jpg';
+grass.src = 'sprites/grass.jpg';
+wall.src = 'sprites/wall.jpg';
+tree.src = 'sprites/tree.jpg';
+snow.src = 'sprites/snow.jpg';
+ice.src = 'sprites/ice.jpg';
+sand.src = 'sprites/sand.jpg';
+bush.src = 'sprites/bush.jpg';
+hero.src = 'sprites/hero.png';
+tallGrass.src = 'sprites/grass.png';
+stone.src = 'sprites/stone.png';
+objectTree.src = 'sprites/tree.png';
