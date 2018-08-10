@@ -10,6 +10,7 @@ let water = new Image(),
     objectTree = new Image(),
     stone = new Image(),
     tallGrass = new Image(),
+    tallGrass2 = new Image(),
     hero = new Image();
 
 water.src = 'sprites/water.jpg';
@@ -23,5 +24,6 @@ sand.src = 'sprites/sand.jpg';
 bush.src = 'sprites/bush.jpg';
 hero.src = 'sprites/hero.png';
 tallGrass.src = 'sprites/grass.png';
+tallGrass2.src = 'sprites/grass2.png';
 stone.src = 'sprites/stone.png';
 objectTree.src = 'sprites/tree.png';
