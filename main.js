@@ -1,5 +1,7 @@
 'use strict';
+
 let mapNo = 0;
+
 let ctx = null,
     tileW = 40, tileH = 40,    
     currentSecond = 0, frameCount = 0, framesLastSecond = 0,
@@ -28,18 +30,6 @@ let  floorTypes = {
   ice     : 3
 };
 
-let tileTypes = {
-  0: {floor:floorTypes.solid, sprite: wall}, //стена
-  1: {floor:floorTypes.path, sprite: grass}, //трава
-  2: {floor:floorTypes.path, sprite: path}, //дорога
-  3: {floor:floorTypes.solid, sprite: tree}, //деревья
-  4: {floor:floorTypes.water, sprite: water}, //вода
-  5: {floor:floorTypes.path, sprite: bush}, //кусты
-  6: {floor:floorTypes.path, sprite: snow}, //снег
-  7: {floor:floorTypes.path, sprite: sand}, //песок
-  8: {floor:floorTypes.ice, sprite: ice} //лед
-};
-
 function Tile(tx, ty, tt) {
   this.x          = tx;
   this.y          = ty;
@@ -52,7 +42,7 @@ function TileMap() {
   this.map   = [];
   this.w     = 0;
   this.h     = 0;
-  this.layar = 4;
+  this.layer = 4;
 }
 
 TileMap.prototype.buildMapFromData = function(d, w, h) {
@@ -61,6 +51,7 @@ TileMap.prototype.buildMapFromData = function(d, w, h) {
   if(d.length != (w*h)) {
     return false;
   }
+    
   this.map.length = 0;
   for(let y = 0; y < h; y++) {
     for(let x = 0; x < w; x++) {
@@ -71,22 +62,33 @@ TileMap.prototype.buildMapFromData = function(d, w, h) {
 }
 
 MapObject.prototype.placeAt = function(nx, ny, mapN) {
-  if(mapTileData[mapN].map[toIndex(this.x, this.y)].object == this){
-    mapTileData[mapN].map[toIndex(this.x, this.y)].object = null;
-  }
-  this.x = nx;
-  this.y = ny;
-  mapTileData[mapN].map[toIndex(nx, ny)].object = this;
+    if(mapTileData[mapN].map[toIndex(this.x, this.y)].object == this) {
+        mapTileData[mapN].map[toIndex(this.x, this.y)].object = null;
+    }
+    
+    this.x = nx;
+    this.y = ny;
+    
+    let tmp = mapNo;
+    mapNo = mapN;
+    
+    mapTileData[mapN].map[toIndex(nx, ny)].object = this;
+    
+    mapNo = tmp;
 };
 
+
 let mapTileData = {}
+
 mapTileData[0] = new TileMap();
 mapTileData[1] = new TileMap();
 mapTileData[2] = new TileMap();
 mapTileData[3] = new TileMap();
 mapTileData[4] = new TileMap();
 
+
 let player = new Character();
+
 
 let viewport = {
   screen    :[0, 0],
@@ -103,8 +105,8 @@ let viewport = {
       Math.floor(py / tileH)
     ];
       
-    this.startTile[0] = tile[0] - 1 - Math.ceil((this.screen[0] / 2) / tileW);
-    this.startTile[1] = tile[1] - 1 - Math.ceil((this.screen[1] / 2) / tileH);
+    this.startTile[0] = tile[0] - 1 - Math.ceil((this.screen[0]) / tileW);
+    this.startTile[1] = tile[1] - 1 - Math.ceil((this.screen[1]) / tileH);
       
     if(this.startTile[0] < 0) {
       this.startTile[0] = 0;
@@ -165,7 +167,8 @@ window.onload = function() {
     mapTileData[0].map[((5*mapW[0]) + 13)].eventEnter = function(c) {
       if(player.direction == directions.right) {
         mapNo = 1;
-        c.placeAt(0,5);
+        player.direction = directions.up;
+        c.placeAt(5, 22);
       }
     };
 
@@ -204,9 +207,10 @@ window.onload = function() {
       }
     };
 
-    mapTileData[1].map[((5*mapW[1]) + 0)].eventEnter = function(c) {
-      if(player.direction == directions.left) {
+    mapTileData[1].map[((22*mapW[1]) + 5)].eventEnter = function(c) {
+      if(player.direction == directions.down) {
         mapNo = 0;
+        player.direction = directions.left;
         c.placeAt(13,5);
       }
     };
@@ -244,18 +248,55 @@ window.onload = function() {
         mapNo = 0;
         c.placeAt(19,18);
       }
-    }; 
-
-    let tree1 = new MapObject(1),
-        tree2 = new MapObject(1),
+    };
+    
+    let tree01 = new MapObject(1),
+        tree02 = new MapObject(1),
         grass1 = new MapObject(2),
         grass2 = new MapObject(2),
         stone1 = new MapObject(3),
-        stone2 = new MapObject(3);
-    tree1.placeAt(2, 13, 0);
-    tree2.placeAt(9, 9, 0);
+        stone2 = new MapObject(3),
+        
+        roof01 = new MapObject(4),
+        roof02 = new MapObject(4),
+        
+        roof1 = new MapObject(5),
+        roof2 = new MapObject(6),
+        roof3 = new MapObject(7),
+        roof31 = new MapObject(8),
+        roof32 = new MapObject(8),
+        
+        tree11 = new MapObject(1),
+        tree12 = new MapObject(1),
+        tree13 = new MapObject(1),
+        tree14 = new MapObject(1),
+        tree15 = new MapObject(1),
+        
+        fountain = new MapObject(9);
+    
+    tree01.placeAt(2, 13, 0);
+    tree02.placeAt(9, 9, 0);
     grass1.placeAt(2, 10, 0);
     grass2.placeAt(2, 11, 0);
     stone1.placeAt(2, 2, 0);
     stone2.placeAt(7, 10, 0);
+    
+    roof01.placeAt(1, 23, 1);
+    roof02.placeAt(36, 23, 1);
+    
+    roof1.placeAt(0, 0, 1);
+    roof2.placeAt(30, 0, 1);
+    roof3.placeAt(18, 0, 1);
+    roof31.placeAt(13, 0, 1);
+    roof32.placeAt(25, 0, 1);
+    
+    tree11.placeAt(12, 20, 1);
+    tree12.placeAt(13, 17, 1);
+    tree13.placeAt(29, 18, 1);
+    tree14.placeAt(31, 21, 1);
+    tree15.placeAt(27, 20, 1);
+    
+    
+    fountain.placeAt(19, 16, 1);
+
 };

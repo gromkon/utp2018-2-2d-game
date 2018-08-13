@@ -45,6 +45,7 @@ Character.prototype.processMovement = function(t) {
     return true;
 };
 
+
 Character.prototype.canMoveTo = function(x, y) {
   if(x < 0 || x >= mapW[mapNo] || y < 0 || y >= mapH[mapNo]) {
       return false;
@@ -87,6 +88,7 @@ Character.prototype.canMoveDirection = function(d){
   }
 };
 
+
 Character.prototype.MoveLeft = function(t) {
   this.tileTo[0]--;
   this.timeMoved = t;
@@ -107,6 +109,7 @@ Character.prototype.MoveUp = function(t) {
   this.timeMoved = t;
   this.direction = directions.up;
 };
+
 
 Character.prototype.moveDirection = function(d , t) {
   switch(d) {
