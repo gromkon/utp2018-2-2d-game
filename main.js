@@ -175,38 +175,38 @@ window.onload = function() {
       }
     };
 
-    mapTileData[0].map[((10*mapW[0]) + 10)].eventEnter = function(c) {
+    mapTileData[0].map[((9*mapW[0]) + 10)].eventEnter = function(c) {
       if(player.direction == directions.up) {
         mapNo = 2;
-        c.placeAt(8,10);
+        c.placeAt(8,9);
       }
     };
 
-    mapTileData[0].map[((12*mapW[0]) + 18)].eventEnter = function(c) {
+    mapTileData[0].map[((10*mapW[0]) + 18)].eventEnter = function(c) {
       if(player.direction == directions.up) {
         mapNo = 3;
-        c.placeAt(4,10);
+        c.placeAt(4,9);
       }
     };
 
-    mapTileData[0].map[((12*mapW[0]) + 19)].eventEnter = function(c) {
+    mapTileData[0].map[((10*mapW[0]) + 19)].eventEnter = function(c) {
       if(player.direction == directions.up) {
         mapNo = 3;
-        c.placeAt(5,10);
+        c.placeAt(5,9);
       }
     };
 
-    mapTileData[0].map[((19*mapW[0]) + 18)].eventEnter = function(c) {
+    mapTileData[0].map[((17*mapW[0]) + 18)].eventEnter = function(c) {
       if(player.direction == directions.up) {
         mapNo = 4;
-        c.placeAt(4,10);
+        c.placeAt(4,9);
       }
     };
 
-    mapTileData[0].map[((19*mapW[0]) + 19)].eventEnter = function(c) {
+    mapTileData[0].map[((17*mapW[0]) + 19)].eventEnter = function(c) {
       if(player.direction == directions.up) {
         mapNo = 4;
-        c.placeAt(5,10);
+        c.placeAt(5,9);
       }
     };
 
@@ -218,35 +218,35 @@ window.onload = function() {
       }
     };
 
-    mapTileData[2].map[((9*mapW[2]) + 8)].eventEnter = function(c) {
+    mapTileData[2].map[((10*mapW[2]) + 8)].eventEnter = function(c) {
       if(player.direction == directions.down) {
         mapNo = 0;
         c.placeAt(10,9);
       }
     };
 
-    mapTileData[3].map[((9*mapW[3]) + 4)].eventEnter = function(c) {
+    mapTileData[3].map[((10*mapW[3]) + 4)].eventEnter = function(c) {
       if(player.direction == directions.down) {
         mapNo = 0;
         c.placeAt(18,11);
       }
     };
 
-    mapTileData[3].map[((9*mapW[3]) + 5)].eventEnter = function(c) {
+    mapTileData[3].map[((10*mapW[3]) + 5)].eventEnter = function(c) {
       if(player.direction == directions.down) {
         mapNo = 0;
         c.placeAt(19,11);
       }
     };
 
-    mapTileData[4].map[((9*mapW[4]) + 4)].eventEnter = function(c) {
+    mapTileData[4].map[((10*mapW[4]) + 4)].eventEnter = function(c) {
       if(player.direction == directions.down) {
         mapNo = 0;
         c.placeAt(18,18);
       }
     };
 
-    mapTileData[4].map[((9*mapW[4]) + 5)].eventEnter = function(c) {
+    mapTileData[4].map[((10*mapW[4]) + 5)].eventEnter = function(c) {
       if(player.direction == directions.down) {
         mapNo = 0;
         c.placeAt(19,18);
