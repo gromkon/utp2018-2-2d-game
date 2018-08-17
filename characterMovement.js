@@ -123,3 +123,21 @@ Character.prototype.moveDirection = function(d , t) {
       return this.MoveRight(t);
   }
 };
+
+Character.prototype.pickUp = function() {
+  if(this.tileTo[0] != this.tileFrom[0] ||
+     this.tileTo[1] != this.tileFrom[1]) {
+   return false;
+  }
+  let is = mapTileData.map[toIndex(this.tileFrom[0], this.tileFrom[1])].itemStack;
+  if(is != null) {
+    let remains = this.inventory.addItems(is.type, is.qty);
+    if(remains) {
+      is.qty = remains;
+    }
+    else{
+      mapTileData.map[toIndex(this.ti)][toIndex(this.tileFrom[0], this.tileFrom[1])].itemStack = null;
+    }
+  }
+  return true;
+};

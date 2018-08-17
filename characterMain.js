@@ -11,4 +11,5 @@ function Character() {
   this.sprites[directions.up] = [{x:4, y:320, w:20, h:30}];
   this.sprites[directions.left] = [{x:4, y:120, w:18, h:30}];
   this.sprites[directions.right] = [{x:4, y:220, w:18, h:30}];
+  this.inventory = new Inventory(10);
 }

@@ -105,8 +105,8 @@ let viewport = {
       Math.floor(py / tileH)
     ];
       
-    this.startTile[0] = tile[0] - 1 - Math.ceil((this.screen[0]) / tileW);
-    this.startTile[1] = tile[1] - 1 - Math.ceil((this.screen[1]) / tileH);
+    this.startTile[0] = tile[0] - 5 - Math.ceil((this.screen[0]) / tileW);
+    this.startTile[1] = tile[1] - 5 - Math.ceil((this.screen[1]) / tileH);
       
     if(this.startTile[0] < 0) {
       this.startTile[0] = 0;
@@ -115,8 +115,8 @@ let viewport = {
       this.startTile[1] = 0;
     }
       
-    this.endTile[0] = tile[0] + 1 + Math.ceil((this.screen[0] / 2) / tileW);
-    this.endTile[1] = tile[1] + 1 + Math.ceil((this.screen[1] / 2) / tileH);
+    this.endTile[0] = tile[0] + 5 + Math.ceil((this.screen[0] / 2) / tileW);
+    this.endTile[1] = tile[1] + 5 + Math.ceil((this.screen[1] / 2) / tileH);
       
     if(this.endTile[0] >= mapW[mapNo]) {
       this.endTile[0] = mapW[mapNo] - 1;
@@ -146,6 +146,9 @@ window.onload = function() {
       if((e.keyCode >= 37 && e.keyCode <= 40) || (e.keyCode == 16) || (e.keyCode==101)) {
         keysDown[e.keyCode] = false;
       }
+      if(e.keyCode == 83) {
+        currentSpeed = (currentSpeed >= (gameSpeeds.length - 1) ? 0 : currentSpeed + 1)
+      }
     });
     
     viewport.screen =[
@@ -164,7 +167,7 @@ window.onload = function() {
     mapTileData[3].buildMapFromData(gameMap[3], mapW[3], mapH[3]);
     mapTileData[4].buildMapFromData(gameMap[4], mapW[4], mapH[4]);
 
-    mapTileData[0].map[((5*mapW[0]) + 13)].eventEnter = function(c) {
+    mapTileData[0].map[((5*mapW[0]) + 14)].eventEnter = function(c) {
       if(player.direction == directions.right) {
         mapNo = 1;
         player.direction = directions.up;
@@ -179,35 +182,35 @@ window.onload = function() {
       }
     };
 
-    mapTileData[0].map[((11*mapW[0]) + 18)].eventEnter = function(c) {
+    mapTileData[0].map[((10*mapW[0]) + 18)].eventEnter = function(c) {
       if(player.direction == directions.up) {
         mapNo = 3;
         c.placeAt(4,9);
       }
     };
 
-    mapTileData[0].map[((11*mapW[0]) + 19)].eventEnter = function(c) {
+    mapTileData[0].map[((10*mapW[0]) + 19)].eventEnter = function(c) {
       if(player.direction == directions.up) {
         mapNo = 3;
         c.placeAt(5,9);
       }
     };
 
-    mapTileData[0].map[((18*mapW[0]) + 18)].eventEnter = function(c) {
+    mapTileData[0].map[((17*mapW[0]) + 18)].eventEnter = function(c) {
       if(player.direction == directions.up) {
         mapNo = 4;
         c.placeAt(4,9);
       }
     };
 
-    mapTileData[0].map[((18*mapW[0]) + 19)].eventEnter = function(c) {
+    mapTileData[0].map[((17*mapW[0]) + 19)].eventEnter = function(c) {
       if(player.direction == directions.up) {
         mapNo = 4;
         c.placeAt(5,9);
       }
     };
 
-    mapTileData[1].map[((22*mapW[1]) + 5)].eventEnter = function(c) {
+    mapTileData[1].map[((23*mapW[1]) + 5)].eventEnter = function(c) {
       if(player.direction == directions.down) {
         mapNo = 0;
         player.direction = directions.left;
@@ -215,35 +218,35 @@ window.onload = function() {
       }
     };
 
-    mapTileData[2].map[((9*mapW[2]) + 8)].eventEnter = function(c) {
+    mapTileData[2].map[((10*mapW[2]) + 8)].eventEnter = function(c) {
       if(player.direction == directions.down) {
         mapNo = 0;
         c.placeAt(10,9);
       }
     };
 
-    mapTileData[3].map[((9*mapW[3]) + 4)].eventEnter = function(c) {
+    mapTileData[3].map[((10*mapW[3]) + 4)].eventEnter = function(c) {
       if(player.direction == directions.down) {
         mapNo = 0;
         c.placeAt(18,11);
       }
     };
 
-    mapTileData[3].map[((9*mapW[3]) + 5)].eventEnter = function(c) {
+    mapTileData[3].map[((10*mapW[3]) + 5)].eventEnter = function(c) {
       if(player.direction == directions.down) {
         mapNo = 0;
         c.placeAt(19,11);
       }
     };
 
-    mapTileData[4].map[((9*mapW[4]) + 4)].eventEnter = function(c) {
+    mapTileData[4].map[((10*mapW[4]) + 4)].eventEnter = function(c) {
       if(player.direction == directions.down) {
         mapNo = 0;
         c.placeAt(18,18);
       }
     };
 
-    mapTileData[4].map[((9*mapW[4]) + 5)].eventEnter = function(c) {
+    mapTileData[4].map[((10*mapW[4]) + 5)].eventEnter = function(c) {
       if(player.direction == directions.down) {
         mapNo = 0;
         c.placeAt(19,18);
