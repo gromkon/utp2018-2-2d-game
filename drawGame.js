@@ -4,7 +4,7 @@ function drawGame() {
 
     let currentFrameTime = Date.now(),
         timeElapsed = currentFrameTime - lastFrameTime;
-
+    gameTime += Math.floor(timeElapsed * gameSpeeds[currentSpeed].mult);
     let sec = Math.floor(Date.now() / 1000);
 
     if(sec != currentSecond) {
@@ -22,14 +22,14 @@ function drawGame() {
       player.delayMove = 150;
     }
 
-    if(!player.processMovement(currentFrameTime)) {
+    if(!player.processMovement(gameTime) && gameSpeeds[currentSpeed].mult != 0) {
       if(keysDown[38]) {
         if(player.direction != directions.up) {
           player.direction = directions.up;
         }
         else
         if(player.canMoveUp()) {
-          player.MoveUp(currentFrameTime);
+          player.MoveUp(gameTime);
         }
       }
       else if(keysDown[40]) {
@@ -38,7 +38,7 @@ function drawGame() {
         }
         else
         if(player.canMoveDown()) {
-          player.MoveDown(currentFrameTime);
+          player.MoveDown(gameTime);
         }
       }
       else if(keysDown[39]) {
@@ -47,7 +47,7 @@ function drawGame() {
         }
         else
         if(player.canMoveRight()) {
-          player.MoveRight(currentFrameTime);
+          player.MoveRight(gameTime);
         }
       }
       else if(keysDown[37]) {
@@ -56,7 +56,7 @@ function drawGame() {
         }
         else
         if(player.canMoveLeft()) {
-          player.MoveLeft(currentFrameTime);
+          player.MoveLeft(gameTime);
         }
       }
     }
@@ -79,7 +79,17 @@ function drawGame() {
                              viewport.offset[1] + y*tileH,
                              tileW, tileH);
            }
-             
+           else if (z == 1) {
+             let is = mapTileData[mapNo].map[toIndex(x, y)].itemStack;
+             if(is != null){
+               var sprite = itemTypes[is.type].sprite;
+               ctx.drawImage(tileset, sprite[0].x, sprite[0].y,
+                             sprite[0].w, sptite[0].h,
+                             viewport.offset[0] + (x*tileW) + itemTypes[is.type].offset[0],
+                             viewport.offset[1] + (y*tileH) + itemTypes[is.type].offset[1],
+                             sprite[0].w, sprite[0].h);
+             }
+           }
            let o = mapTileData[mapNo].map[toIndex(x, y)].object;
            if(o != null && objectTypes[o.type].zIndex == z) {
               let b = objectTypes[o.type];
@@ -104,7 +114,26 @@ function drawGame() {
                         player.dimensions[0], player.dimensions[1]);
      }
   }
-    
+  ctx.textAlign = "right";
+  for(let i = 0; i < player.inventory.spaces; i++) {
+    ctx.fillStyle = "#ddccaa";
+    ctx.fillRect(10 + (i * 41), 460, 40, 40);
+    if(typeof player.inventory.stacks[i] != 'undefined') {
+      let it = itemTypes[player.inventory.stacks[i].type];
+      let sprite = it.sprite;
+      ctx.drawImage(tileset, sprite[0].x, sprite[0].y,
+                    sprite[0].w, sptite[0].h,
+                    viewport.offset[0] + (x*tileW) + itemTypes[is.type].offset[0],
+                    viewport.offset[1] + (y*tileH) + itemTypes[is.type].offset[1],
+                    sprite[0].w, sprite[0].h);
+      if(player.inventory.stacks[i].qty > 1) {
+        ctx.fillStyle = "#000000";
+        ctx.fillText("" + player.inventory.stacks[i].qty, 10 + (i * 41) + 38, 460 + 38);
+      }
+    }
+  }
+  ctx.textAlign = "left";
+  ctx.fillText("Game speed: " + gameSpeeds[currentSpeed].name, 10, 40);
   lastFrameTime = currentFrameTime;
   requestAnimationFrame(drawGame);
 }
