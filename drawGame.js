@@ -117,7 +117,7 @@ function drawGame() {
   ctx.textAlign = "right";
   for(let i = 0; i < player.inventory.spaces; i++) {
     ctx.fillStyle = "#ddccaa";
-    ctx.fillRect(10 + (i * 41), 460, 40, 40);
+    ctx.fillRect(10 + (i * 41), 430, 40, 40);
     if(typeof player.inventory.stacks[i] != 'undefined') {
       let it = itemTypes[player.inventory.stacks[i].type];
       let sprite = it.sprite;
@@ -128,7 +128,7 @@ function drawGame() {
                     sprite[0].w, sprite[0].h);
       if(player.inventory.stacks[i].qty > 1) {
         ctx.fillStyle = "#000000";
-        ctx.fillText("" + player.inventory.stacks[i].qty, 10 + (i * 41) + 38, 460 + 38);
+        ctx.fillText("" + player.inventory.stacks[i].qty, 10 + (i * 41) + 38, 430 + 38);
       }
     }
   }
