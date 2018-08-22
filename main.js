@@ -300,6 +300,6 @@ window.onload = function() {
     tree15.placeAt(27, 20, 1);
     
     
-    fountain.placeAt(19, 16, 1);
+    fountain.placeAt(21, 19, 1);
 
 };

@@ -10,5 +10,7 @@ let tileTypes = {
     8: {floor:floorTypes.ice, sprite: ice}, //Р»РµРґ
     9: {floor:floorTypes.path, sprite: asphalt},
     
-    10: {floor:floorTypes.path, sprite: stairs}
+    10: {floor:floorTypes.path, sprite: stairs},
+    
+    11: {floor:floorTypes.solid, sprite: asphalt}
 };

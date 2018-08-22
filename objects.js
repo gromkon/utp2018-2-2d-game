@@ -82,9 +82,9 @@ let objectTypes = {
       name : "Fountain",
       sp : objectFountain,
       sprite : [{x:0, y:0, w:200, h:200}],
-      offset : [0, 10],
+      offset : [-80, -95],
       collision : objectCollision.solid,
-      zIndex : 1
+      zIndex : 2
     }
 }
 
