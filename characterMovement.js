@@ -6,7 +6,7 @@ Character.prototype.placeAt = function(x, y) {
 };
 
 Character.prototype.processMovement = function(t) {
-    if(this.tileFrom[0] == this.tileTo[0] && this.tileFrom[1] == this.tileTo[1]) {
+    if (this.tileFrom[0] == this.tileTo[0] && this.tileFrom[1] == this.tileTo[1]) {
       return false;
     }
 
@@ -90,7 +90,7 @@ Character.prototype.canMoveDirection = function(d){
 
 
 Character.prototype.MoveLeft = function(t) {
-  this.tileTo[0]--;
+  this.tileTo[0]-- ;
   this.timeMoved = t;
   this.direction = directions.left;
 };
