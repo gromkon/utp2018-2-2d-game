@@ -90,7 +90,7 @@ Character.prototype.canMoveDirection = function(d){
 
 
 Character.prototype.MoveLeft = function(t) {
-  this.tileTo[0]--;
+  this.tileTo[0]-- ;
   this.timeMoved = t;
   this.direction = directions.left;
 };
