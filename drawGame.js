@@ -110,7 +110,7 @@ function drawGame() {
                         sprite[0].x, sprite[0].y,
                         sprite[0].w, sprite[0].h,
                         viewport.offset[0] + player.position[0],
-                        viewport.offset[1] + player.position[1],
+                        viewport.offset[1] + player.position[1]-10,
                         player.dimensions[0], player.dimensions[1]);
      }
   }
