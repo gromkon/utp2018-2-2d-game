@@ -163,11 +163,6 @@ window.onload = function() {
 		document.getElementById('game').height
 	];
 
-	hero.onerror = function() {
-		ctx = null;
-		alert("Не получилось загрузить спрайт");
-	};
-
 	mapTileData[0].buildMapFromData(gameMap[0], mapW[0], mapH[0]);
 	mapTileData[1].buildMapFromData(gameMap[1], mapW[1], mapH[1]);
 	mapTileData[2].buildMapFromData(gameMap[2], mapW[2], mapH[2]);
