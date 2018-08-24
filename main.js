@@ -13,7 +13,10 @@ let keysDown = {
     38: false,
     39: false,
     40: false,
-    101: false
+    87: false,
+    83: false,
+    65: false,
+    68: false
 };
 
 let directions = {
@@ -137,16 +140,18 @@ window.onload = function() {
     requestAnimationFrame(drawGame);
     
     window.addEventListener("keydown", function(e) {
-      if((e.keyCode >= 37 && e.keyCode <= 40) || (e.keyCode == 16) || (e.keyCode==101)) {
+      if((e.keyCode >= 37 && e.keyCode <= 40) || (e.keyCode == 16) || 
+         (e.keyCode == 83) || (e.keyCode == 87) || (e.keyCode == 65) || (e.keyCode == 68)) {
         keysDown[e.keyCode] = true;
       }
     });
     
     window.addEventListener("keyup", function(e) {
-      if((e.keyCode >= 37 && e.keyCode <= 40) || (e.keyCode == 16) || (e.keyCode==101)) {
+      if((e.keyCode >= 37 && e.keyCode <= 40) || (e.keyCode == 16) || 
+         (e.keyCode == 83) || (e.keyCode == 87) || (e.keyCode == 65) || (e.keyCode == 68)) {
         keysDown[e.keyCode] = false;
       }
-      if(e.keyCode == 83) {
+      if(e.keyCode==101) {
         currentSpeed = (currentSpeed >= (gameSpeeds.length - 1) ? 0 : currentSpeed + 1)
       }
     });
@@ -175,7 +180,7 @@ window.onload = function() {
       }
     };
 
-    mapTileData[0].map[((9*mapW[0]) + 10)].eventEnter = function(c) {
+    mapTileData[0].map[((8*mapW[0]) + 10)].eventEnter = function(c) {
       if(player.direction == directions.up) {
         mapNo = 2;
         c.placeAt(8,9);
