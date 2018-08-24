@@ -23,7 +23,7 @@ function drawGame() {
     }
 
     if(!player.processMovement(gameTime) && gameSpeeds[currentSpeed].mult != 0) {
-      if(keysDown[38]) {
+      if((keysDown[38])||(keysDown[87])) {
         if(player.direction != directions.up) {
           player.direction = directions.up;
         }
@@ -32,7 +32,7 @@ function drawGame() {
           player.MoveUp(gameTime);
         }
       }
-      else if(keysDown[40]) {
+      else if((keysDown[40])||(keysDown[83])) {
         if(player.direction != directions.down) {
           player.direction = directions.down;
         }
@@ -41,7 +41,7 @@ function drawGame() {
           player.MoveDown(gameTime);
         }
       }
-      else if(keysDown[39]) {
+      else if((keysDown[39])||(keysDown[68])) {
         if(player.direction != directions.right) {
           player.direction = directions.right;
         }
@@ -50,7 +50,7 @@ function drawGame() {
           player.MoveRight(gameTime);
         }
       }
-      else if(keysDown[37]) {
+      else if((keysDown[37])||(keysDown[65])) {
         if(player.direction != directions.left) {
           player.direction = directions.left;
         }
@@ -110,7 +110,7 @@ function drawGame() {
                         sprite[0].x, sprite[0].y,
                         sprite[0].w, sprite[0].h,
                         viewport.offset[0] + player.position[0],
-                        viewport.offset[1] + player.position[1],
+                        viewport.offset[1] + player.position[1]-10,
                         player.dimensions[0], player.dimensions[1]);
      }
   }
