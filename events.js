@@ -15,119 +15,119 @@ let lOE = [];
 // День 0.
 lOE[0] = [];
 // Предмет информатика.
-lOE[0][0]=[];
+lOE[0][0] = [];
 // Игрок участвует в процессе.
 lOE[0][0][0] = [
-  function(){
+	function() {
 
-  }
+	}
 ];
 // Игрок решил поговорить с однокласником.
 lOE[0][0][1] = [];
 // Игрок пытается уйти с занятия.
 lOE[0][0][2] = [
-  // У игрока получилось.
-  function() {
+	// У игрока получилось.
+	function() {
 
-  },
-  // У игрока не получилось.
-  function() {
+	},
+	// У игрока не получилось.
+	function() {
 
-  }
+	}
 ];
 
 lOE[0][1] = [];
 lOE[0][1][0] = [
-  function(){
+	function() {
 
-  }
+	}
 ];
 lOE[0][1][1] = [];
 lOE[0][1][2] = [
-  function() {
+	function() {
 
-  },
-  function() {
+	},
+	function() {
 
-  }
+	}
 ];
 
 lOE[0][2] = [];
 lOE[0][2][0] = [
-  function(){
+	function() {
 
-  }
+	}
 ];
 lOE[0][2][1] = [];
 lOE[0][2][2] = [
-  function() {
+	function() {
 
-  },
-  function() {
+	},
+	function() {
 
-  }
+	}
 ];
 
 lOE[0][3] = [];
 lOE[0][3][0] = [
-  function(){
+	function() {
 
-  }
+	}
 ];
 lOE[0][3][1] = [];
 lOE[0][3][2] = [
-  function() {
+	function() {
 
-  },
-  function() {
+	},
+	function() {
 
-  }
+	}
 ];
 
 lOE[0][4] = [];
 lOE[0][4][0] = [
-  function(){
+	function() {
 
-  }
+	}
 ];
 lOE[0][4][1] = [];
 lOE[0][4][2] = [
-  function() {
+	function() {
 
-  },
-  function() {
+	},
+	function() {
 
-  }
+	}
 ];
 
 lOE[0][5] = [];
 lOE[0][5][0] = [
-  function(){
+	function() {
 
-  }
+	}
 ];
 lOE[0][5][1] = [];
 lOE[0][5][2] = [
-  function() {
+	function() {
 
-  },
-  function() {
+	},
+	function() {
 
-  }
+	}
 ];
 
 lOE[0][6] = [];
 lOE[0][6][0] = [
-  function(){
+	function() {
 
-  }
+	}
 ];
 lOE[0][6][1] = [];
 lOE[0][6][2] = [
-  function() {
+	function() {
 
-  },
-  function() {
+	},
+	function() {
 
-  }
+	}
 ];
