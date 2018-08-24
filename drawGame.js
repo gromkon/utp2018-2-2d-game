@@ -32,7 +32,7 @@ function drawGame() {
           player.MoveUp(gameTime);
         }
       }
-      else if((keysDown[40]||(keysDown[83])) {
+      else if((keysDown[40])||(keysDown[83])) {
         if(player.direction != directions.down) {
           player.direction = directions.down;
         }
@@ -41,7 +41,7 @@ function drawGame() {
           player.MoveDown(gameTime);
         }
       }
-      else if((keysDown[39]||(keysDown[68])) {
+      else if((keysDown[39])||(keysDown[68])) {
         if(player.direction != directions.right) {
           player.direction = directions.right;
         }
@@ -50,7 +50,7 @@ function drawGame() {
           player.MoveRight(gameTime);
         }
       }
-      else if((keysDown[37]||(keysDown[65])) {
+      else if((keysDown[37])||(keysDown[65])) {
         if(player.direction != directions.left) {
           player.direction = directions.left;
         }
