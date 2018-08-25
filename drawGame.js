@@ -1,6 +1,13 @@
 function drawGame() {
 
-	if (ctx == null) return;
+	if (ctx == null) {
+		return;
+	}
+
+	if (!isAllLoaded) {
+		requestAnimationFrame(drawGame);
+		return;
+	}
 
 	let currentFrameTime = Date.now(),
 		timeElapsed = currentFrameTime - lastFrameTime;
