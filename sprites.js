@@ -11,6 +11,8 @@ let water = new Image(),
     stairs = new Image(),
     
     floor1 = new Image(),
+	floor11 = new Image(),
+	floor12 = new Image(),
     floor2 = new Image(),
     floor3 = new Image(),
     floor31 = new Image(),
@@ -62,6 +64,8 @@ let water = new Image(),
     stairsLoaded = false,
 
     floor1Loaded = false,
+	floor11Loaded = false,
+	floor12Loaded = false,
     floor2Loaded = false,
     floor3Loaded = false,
     floor31Loaded = false,
@@ -114,6 +118,8 @@ let loaded = {
 	11: { sprite: stairs, spriteLoaded: stairsLoaded },
     
 	12: { sprite: floor1, spriteLoaded: floor1Loaded},
+	44: { sprite: floor11, spriteLoaded: floor11Loaded},
+	45: { sprite: floor12, spriteLoaded: floor12Loaded},
 	13: { sprite: floor2, spriteLoaded: floor2Loaded},
 	14: { sprite: floor3, spriteLoaded: floor3Loaded},
 	15: { sprite: floor31, spriteLoaded: floor31Loaded},
@@ -186,6 +192,8 @@ bush.src = 'sprites/bush.jpg';
 stairs.src = 'sprites/stairs.png';
 
 floor1.src = 'sprites/floor1.png';
+floor11.src = 'sprites/floor11.png';
+floor12.src = 'sprites/floor12.png';
 floor2.src = 'sprites/floor2.png';
 floor3.src = 'sprites/floor3.png';
 floor31.src = 'sprites/floor31.png';

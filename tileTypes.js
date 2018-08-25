@@ -17,6 +17,8 @@ const tileTypes = {
 	97: { floor: floorTypes.solid, sprite: floor2 },
     
 	11: { floor: floorTypes.path, sprite: floor1 },
+	33: { floor: floorTypes.path, sprite: floor11 },
+	34: { floor: floorTypes.path, sprite: floor12 },
 	12: { floor: floorTypes.path, sprite: floor2 },
 	13: { floor: floorTypes.path, sprite: floor3 },
 	31: { floor: floorTypes.path, sprite: floor31 },
