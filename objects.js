@@ -93,7 +93,7 @@ const objectTypes = {
 			h: 40
 		}],
 		offset: [0, 0],
-		collision: objectCollision.path,
+		collision: objectCollision.solid,
 		zIndex: 3
 	},
 	8: {
