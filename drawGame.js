@@ -3,8 +3,7 @@ function drawGame() {
 	if (ctx == null) {
 		return;
 	}
-
-	if (!isAllLoaded) {
+ 	if (!isAllLoaded) {
 		requestAnimationFrame(drawGame);
 		return;
 	}
@@ -70,7 +69,7 @@ function drawGame() {
 		player.position[1] + (player.dimensions[1] / 2),
 	);
 
-	ctx.fillStyle = "#071408"
+	ctx.fillStyle = '#424242';
 	ctx.fillRect(0, 0, viewport.screen[0], viewport.screen[1]);
 
 	for (let z = 0; z < mapTileData[mapNo].layer; z++) {
