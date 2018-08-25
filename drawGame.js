@@ -126,7 +126,13 @@ function drawGame() {
 		}
 	}
 	ctx.textAlign = "left";
-	ctx.fillText("Game speed: " + gameSpeeds[currentSpeed].name, 10, 40);
+	ctx.font = "italic bold 50pt sans-serif";
+	ctx.fillStyle = "#f90606";
+	if (gameSpeeds[currentSpeed].name == "Paused") {
+		ctx.fillText("Пауза", 235, 260);
+	} else {
+		ctx.fillText("", 10, 40);
+	}
 	lastFrameTime = currentFrameTime;
 	requestAnimationFrame(drawGame);
 }
