@@ -14,10 +14,13 @@ const tileTypes = {
     
 	99: { floor: floorTypes.solid, sprite: asphalt },
     98: { floor: floorTypes.path, sprite: clear },
+    97: { floor: floorTypes.solid, sprite: floor2 },
     
     11: { floor: floorTypes.path, sprite: floor1 },
     12: { floor: floorTypes.path, sprite: floor2 },
     13: { floor: floorTypes.path, sprite: floor3 },
+    31: { floor: floorTypes.path, sprite: floor31 },
+    32: { floor: floorTypes.path, sprite: floor32 },
     14: { floor: floorTypes.path, sprite: floorHall },
     
     15: { floor:floorTypes.solid, sprite: wall11 },
