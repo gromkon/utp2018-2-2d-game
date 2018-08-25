@@ -13,6 +13,8 @@ let water = new Image(),
     floor1 = new Image(),
     floor2 = new Image(),
     floor3 = new Image(),
+    floor31 = new Image(),
+    floor32 = new Image(),
     floorHall = new Image(),
     
     wall11 = new Image(),
@@ -45,7 +47,131 @@ let water = new Image(),
     
     objectFountain = new Image(),
     
-    hero = new Image();
+    hero = new Image(),
+    
+    waterLoaded = false,
+    pathLoaded = false,
+    asphaltLoaded = false,
+    grassLoaded = false,
+    wallLoaded = false,
+    treeLoaded = false,
+    snowLoaded = false,
+    iceLoaded = false,
+    sandLoaded = false,
+    bushLoaded = false,
+    stairsLoaded = false,
+
+    floor1Loaded = false,
+    floor2Loaded = false,
+    floor3Loaded = false,
+    floor31Loaded = false,
+    floor32Loaded = false,
+    floorHallLoaded = false,
+
+    wall11Loaded = false,
+    wall12Loaded = false,
+    wall13Loaded = false,
+    wall14Loaded = false,
+    wall15Loaded = false,
+    wall16Loaded = false,
+    wall17Loaded = false,
+    wall18Loaded = false,
+
+    corner11Loaded = false,
+    corner12Loaded = false,
+    corner13Loaded = false,
+    corner14Loaded = false,
+    corner15Loaded = false,
+    corner16Loaded = false,
+    corner17Loaded = false,
+    corner18Loaded = false,
+
+    objectTreeLoaded = false,
+    objectStoneLoaded = false,
+    objectGrassLoaded = false,
+
+    objectRoofLoaded = false,
+    objectRoof1Loaded = false,
+    objectRoof2Loaded = false,
+    objectRoof3Loaded = false,
+    objectRoof31Loaded = false,
+
+    objectFountainLoaded = false,
+
+    heroLoaded = false;
+
+let loaded = {
+	1: { sprite: water, spriteLoaded: waterLoaded },
+	2: { sprite: path, spriteLoaded: pathLoaded },
+	3: { sprite: asphalt, spriteLoaded: asphaltLoaded },
+	4: { sprite: grass, spriteLoaded: grassLoaded },
+	5: { sprite: wall, spriteLoaded: wallLoaded },
+	6: { sprite: tree, spriteLoaded: treeLoaded },
+	7: { sprite: snow, spriteLoaded: snowLoaded },
+	8: { sprite: ice, spriteLoaded: iceLoaded },
+	9: { sprite: sand, spriteLoaded: sandLoaded },
+	10: { sprite: bush, spriteLoaded: bushLoaded },
+	11: { sprite: stairs, spriteLoaded: stairsLoaded },
+    
+    12: { sprite: floor1, spriteLoaded: floor1Loaded},
+    13: { sprite: floor2, spriteLoaded: floor2Loaded},
+    14: { sprite: floor3, spriteLoaded: floor3Loaded},
+    15: { sprite: floor31, spriteLoaded: floor31Loaded},
+    16: { sprite: floor32, spriteLoaded: floor32Loaded},
+    17: { sprite: floorHall, spriteLoaded: floorHallLoaded},
+    
+    18: { sprite: wall11, spriteLoaded: wall11Loaded },
+    19: { sprite: wall12, spriteLoaded: wall12Loaded },
+    20: { sprite: wall13, spriteLoaded: wall13Loaded },
+    21: { sprite: wall14, spriteLoaded: wall14Loaded },
+    22: { sprite: wall15, spriteLoaded: wall15Loaded },
+    23: { sprite: wall16, spriteLoaded: wall16Loaded },
+    24: { sprite: wall17, spriteLoaded: wall17Loaded },
+    25: { sprite: wall18, spriteLoaded: wall18Loaded },
+    
+    26: { sprite: corner11, spriteLoaded: corner11Loaded },
+    27: { sprite: corner12, spriteLoaded: corner12Loaded },
+    28: { sprite: corner13, spriteLoaded: corner13Loaded },
+    29: { sprite: corner14, spriteLoaded: corner14Loaded },
+    30: { sprite: corner15, spriteLoaded: corner15Loaded },
+    31: { sprite: corner16, spriteLoaded: corner16Loaded },
+    32: { sprite: corner17, spriteLoaded: corner17Loaded },
+    33: { sprite: corner18, spriteLoaded: corner18Loaded },
+    
+    34: { sprite: objectTree, spriteLoaded: objectTreeLoaded },
+	35: { sprite: objectStone, spriteLoaded: objectStoneLoaded },
+	36: { sprite: objectGrass, spriteLoaded: objectGrassLoaded },
+    
+    37: { sprite: objectRoof, spriteLoaded: objectRoofLoaded },
+	38: { sprite: objectRoof1, spriteLoaded: objectRoof1Loaded },
+	39: { sprite: objectRoof2, spriteLoaded: objectRoof2Loaded },
+	40: { sprite: objectRoof3, spriteLoaded: objectRoof3Loaded },
+    
+	41: { sprite: objectRoof31, spriteLoaded: objectRoof31Loaded },
+    42: { sprite: objectFountain, spriteLoaded: objectFountainLoaded },
+    
+	43: { sprite: hero, spriteLoaded: heroLoaded },
+}
+
+let isAllLoaded = true;
+
+for (let i in loaded) {
+	loaded[i].sprite.onerror = function() {
+		alert("Failed loading sprite");
+	}
+	loaded[i].sprite.onload = function() {
+		loaded[i].spriteLoaded = true;
+	}
+}
+
+(function(isAllLoaded) {
+	for (let i in loaded) {
+		if (loaded[i].spriteLoaded == false) {
+			isAllLoaded = false;
+		}
+	}
+})(isAllLoaded);
+
 
 water.src = 'sprites/water.jpg';
 path.src = 'sprites/path.jpg';
@@ -62,6 +188,8 @@ stairs.src = 'sprites/stairs.png';
 floor1.src = 'sprites/floor1.png';
 floor2.src = 'sprites/floor2.png';
 floor3.src = 'sprites/floor3.png';
+floor31.src = 'sprites/floor31.png';
+floor32.src = 'sprites/floor32.png';
 floorHall.src = 'sprites/floor_hall.png';
 
 wall11.src = 'sprites/wall11.png';
@@ -82,7 +210,6 @@ corner15.src = 'sprites/corner15.png';
 corner16.src = 'sprites/corner16.png';
 corner17.src = 'sprites/corner17.png';
 corner18.src = 'sprites/corner18.png';
-
 
 objectTree.src = 'sprites/tree.png';
 objectStone.src = 'sprites/stone.png';
