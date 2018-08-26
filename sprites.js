@@ -14,6 +14,8 @@ let water = new Image(),
 	floor11 = new Image(),
 	floor12 = new Image(),
     floor2 = new Image(),
+	floor21 = new Image(),
+	floor22 = new Image(),
     floor3 = new Image(),
     floor31 = new Image(),
     floor32 = new Image(),
@@ -36,6 +38,16 @@ let water = new Image(),
     corner16 = new Image(),
     corner17 = new Image(),
     corner18 = new Image(),
+	
+	glass1 = new Image(),
+	glass2 = new Image(),
+	glass3 = new Image(),
+	glass4 = new Image(),
+	
+	door1 = new Image(),
+	door2 = new Image(),
+	door3 = new Image(),
+	door4 = new Image(),
     
     objectTree = new Image(),
     objectStone = new Image(),
@@ -67,6 +79,8 @@ let water = new Image(),
 	floor11Loaded = false,
 	floor12Loaded = false,
     floor2Loaded = false,
+	floor21Loaded = false,
+	floor22Loaded = false,
     floor3Loaded = false,
     floor31Loaded = false,
     floor32Loaded = false,
@@ -89,6 +103,16 @@ let water = new Image(),
     corner16Loaded = false,
     corner17Loaded = false,
     corner18Loaded = false,
+	
+	glass1Loaded = false,
+	glass2Loaded = false,
+	glass3Loaded = false,
+	glass4Loaded = false,
+	
+	door1Loaded = false,
+	door2Loaded = false,
+	door3Loaded = false,
+	door4Loaded = false,
 
     objectTreeLoaded = false,
     objectStoneLoaded = false,
@@ -117,14 +141,16 @@ let loaded = {
 	10: { sprite: bush, spriteLoaded: bushLoaded },
 	11: { sprite: stairs, spriteLoaded: stairsLoaded },
     
-	12: { sprite: floor1, spriteLoaded: floor1Loaded},
-	44: { sprite: floor11, spriteLoaded: floor11Loaded},
-	45: { sprite: floor12, spriteLoaded: floor12Loaded},
-	13: { sprite: floor2, spriteLoaded: floor2Loaded},
-	14: { sprite: floor3, spriteLoaded: floor3Loaded},
-	15: { sprite: floor31, spriteLoaded: floor31Loaded},
-	16: { sprite: floor32, spriteLoaded: floor32Loaded},
-	17: { sprite: floorHall, spriteLoaded: floorHallLoaded},
+	12: { sprite: floor1, spriteLoaded: floor1Loaded },
+	44: { sprite: floor11, spriteLoaded: floor11Loaded },
+	45: { sprite: floor12, spriteLoaded: floor12Loaded },
+	13: { sprite: floor2, spriteLoaded: floor2Loaded },
+	50: { sprite: floor21, spriteLoaded: floor21Loaded },
+	51: { sprite: floor22, spriteLoaded: floor22Loaded },
+	14: { sprite: floor3, spriteLoaded: floor3Loaded },
+	15: { sprite: floor31, spriteLoaded: floor31Loaded },
+	16: { sprite: floor32, spriteLoaded: floor32Loaded },
+	17: { sprite: floorHall, spriteLoaded: floorHallLoaded },
     
 	18: { sprite: wall11, spriteLoaded: wall11Loaded },
 	19: { sprite: wall12, spriteLoaded: wall12Loaded },
@@ -143,6 +169,16 @@ let loaded = {
 	31: { sprite: corner16, spriteLoaded: corner16Loaded },
 	32: { sprite: corner17, spriteLoaded: corner17Loaded },
 	33: { sprite: corner18, spriteLoaded: corner18Loaded },
+	
+	46: { sprite: glass1, spriteLoaded: glass1Loaded },
+	47: { sprite: glass2, spriteLoaded: glass2Loaded },
+	48: { sprite: glass3, spriteLoaded: glass3Loaded },
+	49: { sprite: glass4, spriteLoaded: glass4Loaded },
+	
+	52: { sprite: door1, spriteLoaded: door1Loaded },
+	53: { sprite: door2, spriteLoaded: door2Loaded },
+	54: { sprite: door3, spriteLoaded: door3Loaded },
+	55: { sprite: door4, spriteLoaded: door4Loaded },
     
 	34: { sprite: objectTree, spriteLoaded: objectTreeLoaded },
 	35: { sprite: objectStone, spriteLoaded: objectStoneLoaded },
@@ -195,6 +231,8 @@ floor1.src = 'sprites/floor1.png';
 floor11.src = 'sprites/floor11.png';
 floor12.src = 'sprites/floor12.png';
 floor2.src = 'sprites/floor2.png';
+floor21.src = 'sprites/floor21.png';
+floor22.src = 'sprites/floor22.png';
 floor3.src = 'sprites/floor3.png';
 floor31.src = 'sprites/floor31.png';
 floor32.src = 'sprites/floor32.png';
@@ -217,6 +255,16 @@ corner15.src = 'sprites/corner15.png';
 corner16.src = 'sprites/corner16.png';
 corner17.src = 'sprites/corner17.png';
 corner18.src = 'sprites/corner18.png';
+
+glass1.src = 'sprites/glass1.png';
+glass2.src = 'sprites/glass2.png';
+glass3.src = 'sprites/glass3.png';
+glass4.src = 'sprites/glass4.png';
+
+door1.src = 'sprites/door1.png';
+door2.src = 'sprites/door2.png';
+door3.src = 'sprites/door3.png';
+door4.src = 'sprites/door4.png';
 
 objectTree.src = 'sprites/tree.png';
 objectStone.src = 'sprites/stone.png';

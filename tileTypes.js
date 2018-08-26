@@ -20,6 +20,8 @@ const tileTypes = {
 	33: { floor: floorTypes.path, sprite: floor11 },
 	34: { floor: floorTypes.path, sprite: floor12 },
 	12: { floor: floorTypes.path, sprite: floor2 },
+	39: { floor: floorTypes.path, sprite: floor21 },
+	40: { floor: floorTypes.path, sprite: floor22 },
 	13: { floor: floorTypes.path, sprite: floor3 },
 	31: { floor: floorTypes.path, sprite: floor31 },
 	32: { floor: floorTypes.path, sprite: floor32 },
@@ -42,6 +44,16 @@ const tileTypes = {
 	23: { floor:floorTypes.solid, sprite: corner15 },
 	24: { floor:floorTypes.solid, sprite: corner16 },
 	25: { floor:floorTypes.solid, sprite: corner17 },
-	26: { floor:floorTypes.solid, sprite: corner18 }
+	26: { floor:floorTypes.solid, sprite: corner18 },
+	
+	35: { floor:floorTypes.solid, sprite: glass1 },
+	36: { floor:floorTypes.solid, sprite: glass2 },
+	37: { floor:floorTypes.solid, sprite: glass3 },
+	38: { floor:floorTypes.solid, sprite: glass4 },
+	
+	41: { floor:floorTypes.solid, sprite: door1 },
+	42: { floor:floorTypes.solid, sprite: door2 },
+	43: { floor:floorTypes.solid, sprite: door3 },
+	44: { floor:floorTypes.solid, sprite: door4 }	
 };
 

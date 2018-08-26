@@ -94,6 +94,9 @@ mapTileData[3] = new TileMap();
 mapTileData[4] = new TileMap();
 mapTileData[5] = new TileMap();
 mapTileData[6] = new TileMap();
+mapTileData[7] = new TileMap();
+mapTileData[8] = new TileMap();
+mapTileData[9] = new TileMap();
 
 let player = new Character();
 
@@ -172,8 +175,9 @@ window.onload = function() {
 	mapTileData[4].buildMapFromData(gameMap[4], mapW[4], mapH[4]);
 	mapTileData[5].buildMapFromData(gameMap[5], mapW[5], mapH[5]);
 	mapTileData[6].buildMapFromData(gameMap[6], mapW[6], mapH[6]);
-	//mapTileData[7].buildMapFromData(gameMap[7], mapW[7], mapH[7]);
-	//mapTileData[8].buildMapFromData(gameMap[8], mapW[8], mapH[8]);
+	mapTileData[7].buildMapFromData(gameMap[7], mapW[7], mapH[7]);
+	mapTileData[8].buildMapFromData(gameMap[8], mapW[8], mapH[8]);
+	mapTileData[9].buildMapFromData(gameMap[9], mapW[9], mapH[9]);
 	
 	mapTileData[0].map[((5 * mapW[0]) + 14)].eventEnter = function(c) {
 		if (player.direction == directions.right) {
@@ -270,6 +274,42 @@ window.onload = function() {
     { if (player.direction == directions.right) { mapNo = 2; c.placeAt(22, 26); } };
 	mapTileData[6].map[((12 * mapW[6]) + 11)].eventEnter = function(c)
     { if (player.direction == directions.right) { mapNo = 2; c.placeAt(22, 27); } };
+	/*****/
+	
+	/* Перемещение с карты 2 на карту 7 и обратно */
+	mapTileData[2].map[((13 * mapW[2]) + 5)].eventEnter = function(c)
+    { if (player.direction == directions.right) { mapNo = 7; c.placeAt(1, 11); } };
+	mapTileData[2].map[((14 * mapW[2]) + 5)].eventEnter = function(c)
+    { if (player.direction == directions.right) { mapNo = 7; c.placeAt(1, 12); } };
+	
+	mapTileData[7].map[((11 * mapW[7]) + 0)].eventEnter = function(c)
+    { if (player.direction == directions.left) { mapNo = 2; c.placeAt(4, 13); } };
+	mapTileData[7].map[((12 * mapW[7]) + 0)].eventEnter = function(c)
+    { if (player.direction == directions.left) { mapNo = 2; c.placeAt(4, 14); } };
+	/*****/
+	
+	/* Перемещение с карты 2 на карту 8 и обратно */
+	mapTileData[2].map[((29 * mapW[2]) + 4)].eventEnter = function(c)
+    { if (player.direction == directions.left) { mapNo = 8; c.placeAt(12, 4); } };
+	mapTileData[2].map[((30 * mapW[2]) + 4)].eventEnter = function(c)
+    { if (player.direction == directions.left) { mapNo = 8; c.placeAt(12, 5); } };
+	
+	mapTileData[8].map[((4 * mapW[8]) + 13)].eventEnter = function(c)
+    { if (player.direction == directions.right) { mapNo = 2; c.placeAt(5, 29); } };
+	mapTileData[8].map[((5 * mapW[8]) + 13)].eventEnter = function(c)
+    { if (player.direction == directions.right) { mapNo = 2; c.placeAt(5, 30); } };
+	/*****/
+	
+	/* Перемещение с карты 2 на карту 9 и обратно */
+	mapTileData[2].map[((29 * mapW[2]) + 26)].eventEnter = function(c)
+    { if (player.direction == directions.right) { mapNo = 9; c.placeAt(1, 4); } };
+	mapTileData[2].map[((30 * mapW[2]) + 26)].eventEnter = function(c)
+    { if (player.direction == directions.right) { mapNo = 9; c.placeAt(1, 5); } };
+	
+	mapTileData[9].map[((4 * mapW[9]) + 0)].eventEnter = function(c)
+    { if (player.direction == directions.left) { mapNo = 2; c.placeAt(25, 29); } };
+	mapTileData[9].map[((5 * mapW[9]) + 0)].eventEnter = function(c)
+    { if (player.direction == directions.left) { mapNo = 2; c.placeAt(25, 30); } };
 	/*****/
 	
 	
