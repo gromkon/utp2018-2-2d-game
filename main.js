@@ -212,19 +212,19 @@ window.onload = function() {
     mapTileData[1].map[((0 * mapW[1]) + 24)].eventEnter = function(c)
     { if (player.direction == directions.up) { mapNo = 2; c.placeAt(18, 42); } };
     
-    mapTileData[2].map[((42 * mapW[2]) + 12)].eventEnter = function(c)
+    mapTileData[2].map[((43 * mapW[2]) + 12)].eventEnter = function(c)
     { if (player.direction == directions.down) { mapNo = 1; c.placeAt(18, 1); } };
-    mapTileData[2].map[((42 * mapW[2]) + 13)].eventEnter = function(c)
+    mapTileData[2].map[((43 * mapW[2]) + 13)].eventEnter = function(c)
     { if (player.direction == directions.down) { mapNo = 1; c.placeAt(19, 1); } };
-    mapTileData[2].map[((42 * mapW[2]) + 14)].eventEnter = function(c)
+    mapTileData[2].map[((43 * mapW[2]) + 14)].eventEnter = function(c)
     { if (player.direction == directions.down) { mapNo = 1; c.placeAt(20, 1); } };
-    mapTileData[2].map[((42 * mapW[2]) + 15)].eventEnter = function(c)
+    mapTileData[2].map[((43 * mapW[2]) + 15)].eventEnter = function(c)
     { if (player.direction == directions.down) { mapNo = 1; c.placeAt(21, 1); } };
-    mapTileData[2].map[((42 * mapW[2]) + 16)].eventEnter = function(c)
+    mapTileData[2].map[((43 * mapW[2]) + 16)].eventEnter = function(c)
     { if (player.direction == directions.down) { mapNo = 1; c.placeAt(22, 1); } };
-    mapTileData[2].map[((42 * mapW[2]) + 17)].eventEnter = function(c)
+    mapTileData[2].map[((43 * mapW[2]) + 17)].eventEnter = function(c)
     { if (player.direction == directions.down) { mapNo = 1; c.placeAt(23, 1); } };
-    mapTileData[2].map[((42 * mapW[2]) + 18)].eventEnter = function(c)
+    mapTileData[2].map[((43 * mapW[2]) + 18)].eventEnter = function(c)
     { if (player.direction == directions.down) { mapNo = 1; c.placeAt(24, 1); } };
     /* (НЕ ТРОГАТЬ) */
 	
