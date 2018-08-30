@@ -7,6 +7,7 @@ function Character() {
 	this.delayMove = 150;
 	this.direction = directions.down;
 	this.sprites = {};
+	
 	this.sprites[directions.down] = [{
 		x: 4,
 		y: 20,
@@ -31,85 +32,6 @@ function Character() {
 		w: 18,
 		h: 30
 	}];
-	this.inventory = new Inventory(10);
+	this.inventory = new Inventory(3);
 }
 
-const stats = {
-	courage: 0,
-	intelegent: 1,
-	charisma: 2,
-	strength: 3,
-	stealthiness: 4
-}
-const subjects = {
-	IT: 0, //Информатика
-	MA: 1, //Математический анализ
-	LAAAG: 2, //Линейная алгебра
-	IL: 3, //Иностранные языки
-	SS: 4, //Социальные науки
-	LAP: 5, //Языки и методы программирования
-	PE: 6 // Физическая культура
-}
-
-this.stat = {};
-this.stat[stats.courage] = {
-	Points: 0,
-	Lv: 0,
-	ToNext: 0
-};
-this.stat[stats.intelegent] = {
-	Points: 0,
-	Lv: 0,
-	ToNext: 0
-};
-this.stat[stats.charisma] = {
-	Points: 0,
-	Lv: 0,
-	ToNext: 0
-};
-this.stat[stats.strength] = {
-	Points: 0,
-	Lv: 0,
-	ToNext: 0
-};
-this.stat[stats.stealthiness] = {
-	Points: 0,
-	Lv: 0,
-	ToNext: 0
-};
-this.subject = {};
-this.subject[subjects.IT] = {
-	Points: 0,
-	Understanding: 0,
-	Bonus: 0
-};
-this.subject[subjects.MA] = {
-	Points: 0,
-	Understanding: 0,
-	Bonus: 0
-};
-this.subject[subjects.LAAAG] = {
-	Points: 0,
-	Understanding: 0,
-	Bonus: 0
-};
-this.subject[subjects.IL] = {
-	Points: 0,
-	Understanding: 0,
-	Bonus: 0
-};
-this.subject[subjects.SS] = {
-	Points: 0,
-	Understanding: 0,
-	Bonus: 0
-};
-this.subject[subjects.LAP] = {
-	Points: 0,
-	Understanding: 0,
-	Bonus: 0
-};
-this.subject[subjects.PE] = {
-	Points: 0,
-	Understanding: 0,
-	Bonus: 0
-};

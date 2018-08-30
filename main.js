@@ -190,8 +190,9 @@ window.onload = function() {
 	mapTileData[1].map[((23 * mapW[1]) + 5)].eventEnter = function(c) {
 		if (player.direction == directions.down) {
 			mapNo = 0;
-			player.direction = directions.left;
 			c.placeAt(13, 5);
+			
+			nextDay();
 		}
 	};
     
@@ -229,88 +230,204 @@ window.onload = function() {
     /* (НЕ ТРОГАТЬ) */
 	
 	/* Перемещение с карты 2 на карту 3 и обратно */
-	mapTileData[2].map[((32 * mapW[2]) + 9)].eventEnter = function(c)
-    { if (player.direction == directions.right) { mapNo = 3; c.placeAt(1, 2); } };
-	mapTileData[2].map[((33 * mapW[2]) + 9)].eventEnter = function(c)
-    { if (player.direction == directions.right) { mapNo = 3; c.placeAt(1, 3); } };
+	mapTileData[2].map[((32 * mapW[2]) + 9)].eventEnter = function(c) {
+		if (player.direction == directions.right && visit[subjects.LA] == false && events < 3) {
+			mapNo = 3;
+			c.placeAt(1, 2);
+			
+			visit[subjects.LA] = true;
+			subject[subjects.LA].Points++;
+			
+			events++;
+		}
+	};
+	mapTileData[2].map[((33 * mapW[2]) + 9)].eventEnter = function(c) {
+		if (player.direction == directions.right && visit[subjects.LA] == false && events < 3) {
+			mapNo = 3;
+			c.placeAt(1, 3);
+			
+			visit[subjects.LA] = true;
+			subject[subjects.LA].Points++;
+			
+			events++;
+		}
+	};
 	
 	mapTileData[3].map[((2 * mapW[3]) + 0)].eventEnter = function(c)
     { if (player.direction == directions.left) { mapNo = 2; c.placeAt(8, 32); } };
 	mapTileData[3].map[((3 * mapW[3]) + 0)].eventEnter = function(c)
     { if (player.direction == directions.left) { mapNo = 2; c.placeAt(8, 33); } };
-	/*****/
+	
 	
 	/* Перемещение с карты 2 на карту 4 и обратно */
-	mapTileData[2].map[((26 * mapW[2]) + 9)].eventEnter = function(c)
-    { if (player.direction == directions.right) { mapNo = 4; c.placeAt(1, 11); } };
-	mapTileData[2].map[((27 * mapW[2]) + 9)].eventEnter = function(c)
-    { if (player.direction == directions.right) { mapNo = 4; c.placeAt(1, 12); } };
+	mapTileData[2].map[((26 * mapW[2]) + 9)].eventEnter = function(c) {
+		if (player.direction == directions.right && visit[subjects.MA] == false && events < 3) {
+			mapNo = 4;
+			c.placeAt(1, 11);
+			
+			visit[subjects.MA] = true;
+			subject[subjects.MA].Points++;
+			
+			events++;
+		}
+	};
+	mapTileData[2].map[((27 * mapW[2]) + 9)].eventEnter = function(c) {
+		if (player.direction == directions.right && visit[subjects.MA] == false && events < 3) {
+			mapNo = 4;
+			c.placeAt(1, 12);
+			
+			visit[subjects.MA] = true;
+			subject[subjects.MA].Points++;
+			
+			events++;
+		}
+	};
 	
 	mapTileData[4].map[((11 * mapW[4]) + 0)].eventEnter = function(c)
     { if (player.direction == directions.left) { mapNo = 2; c.placeAt(8, 26); } };
 	mapTileData[4].map[((12 * mapW[4]) + 0)].eventEnter = function(c)
     { if (player.direction == directions.left) { mapNo = 2; c.placeAt(8, 27); } };
-	/*****/
+	
 	
 	/* Перемещение с карты 2 на карту 5 и обратно */
-	mapTileData[2].map[((32 * mapW[2]) + 21)].eventEnter = function(c)
-    { if (player.direction == directions.left) { mapNo = 5; c.placeAt(10, 2); } };
-	mapTileData[2].map[((33 * mapW[2]) + 21)].eventEnter = function(c)
-    { if (player.direction == directions.left) { mapNo = 5; c.placeAt(10, 3); } };
+	mapTileData[2].map[((32 * mapW[2]) + 21)].eventEnter = function(c) {
+		if (player.direction == directions.left && events < 3) {
+			mapNo = 5;
+			c.placeAt(10, 2);
+			events++;
+		}
+	};
+	mapTileData[2].map[((33 * mapW[2]) + 21)].eventEnter = function(c) {
+		if (player.direction == directions.left && events < 3) {
+			mapNo = 5;
+			c.placeAt(10, 3);
+			events++;
+		}
+	};
 	
 	mapTileData[5].map[((2 * mapW[5]) + 11)].eventEnter = function(c)
     { if (player.direction == directions.right) { mapNo = 2; c.placeAt(22, 32); } };
 	mapTileData[5].map[((3 * mapW[5]) + 11)].eventEnter = function(c)
     { if (player.direction == directions.right) { mapNo = 2; c.placeAt(22, 33); } };
-	/*****/
+	
 	
 	/* Перемещение с карты 2 на карту 6 и обратно */
-	mapTileData[2].map[((26 * mapW[2]) + 21)].eventEnter = function(c)
-    { if (player.direction == directions.left) { mapNo = 6; c.placeAt(10, 11); } };
-	mapTileData[2].map[((27 * mapW[2]) + 21)].eventEnter = function(c)
-    { if (player.direction == directions.left) { mapNo = 6; c.placeAt(10, 12); } };
+	mapTileData[2].map[((26 * mapW[2]) + 21)].eventEnter = function(c) {
+		if (player.direction == directions.left && visit[subjects.EN] == false && events < 3) {
+			mapNo = 6;
+			c.placeAt(10, 11);
+			
+			visit[subjects.EN] = true;
+			subject[subjects.EN].Points++;
+			
+			events++;
+		}
+	};
+	mapTileData[2].map[((27 * mapW[2]) + 21)].eventEnter = function(c) {
+		if (player.direction == directions.left && visit[subjects.EN] == false && events < 3) {
+			mapNo = 6;
+			c.placeAt(10, 12);
+			
+			visit[subjects.EN] = true;
+			subject[subjects.EN].Points++;
+			
+			events++;
+		}
+	};
 	
 	mapTileData[6].map[((11 * mapW[6]) + 11)].eventEnter = function(c)
     { if (player.direction == directions.right) { mapNo = 2; c.placeAt(22, 26); } };
 	mapTileData[6].map[((12 * mapW[6]) + 11)].eventEnter = function(c)
     { if (player.direction == directions.right) { mapNo = 2; c.placeAt(22, 27); } };
-	/*****/
+	
 	
 	/* Перемещение с карты 2 на карту 7 и обратно */
-	mapTileData[2].map[((13 * mapW[2]) + 5)].eventEnter = function(c)
-    { if (player.direction == directions.right) { mapNo = 7; c.placeAt(1, 11); } };
-	mapTileData[2].map[((14 * mapW[2]) + 5)].eventEnter = function(c)
-    { if (player.direction == directions.right) { mapNo = 7; c.placeAt(1, 12); } };
+	mapTileData[2].map[((13 * mapW[2]) + 5)].eventEnter = function(c) {
+		if (player.direction == directions.right && visit[subjects.CS] == false && events < 3) {
+			mapNo = 7;
+			c.placeAt(1, 11);
+			
+			visit[subjects.CS] = true;
+			subject[subjects.CS].Points++;
+			
+			events++;
+		}
+	};
+	mapTileData[2].map[((14 * mapW[2]) + 5)].eventEnter = function(c) {
+		if (player.direction == directions.right && visit[subjects.CS] == false && events < 3) {
+			mapNo = 7;
+			c.placeAt(1, 12);
+			
+			visit[subjects.CS] = true;
+			subject[subjects.CS].Points++;
+			
+			events++;
+		}
+	};
 	
 	mapTileData[7].map[((11 * mapW[7]) + 0)].eventEnter = function(c)
     { if (player.direction == directions.left) { mapNo = 2; c.placeAt(4, 13); } };
 	mapTileData[7].map[((12 * mapW[7]) + 0)].eventEnter = function(c)
     { if (player.direction == directions.left) { mapNo = 2; c.placeAt(4, 14); } };
-	/*****/
+	
 	
 	/* Перемещение с карты 2 на карту 8 и обратно */
-	mapTileData[2].map[((29 * mapW[2]) + 4)].eventEnter = function(c)
-    { if (player.direction == directions.left) { mapNo = 8; c.placeAt(12, 4); } };
-	mapTileData[2].map[((30 * mapW[2]) + 4)].eventEnter = function(c)
-    { if (player.direction == directions.left) { mapNo = 8; c.placeAt(12, 5); } };
-	
+	mapTileData[2].map[((29 * mapW[2]) + 4)].eventEnter = function(c) {
+		if (player.direction == directions.left && visit[subjects.PR] == false && events < 3) {
+			mapNo = 8;
+			c.placeAt(12, 4);
+			
+			visit[subjects.PR] = true;
+			subject[subjects.PR].Points++;
+			
+			events++;
+		}
+	};
+	mapTileData[2].map[((30 * mapW[2]) + 4)].eventEnter = function(c) {
+		if (player.direction == directions.left && visit[subjects.PR] == false && events < 3) {
+			mapNo = 8;
+			c.placeAt(12, 5);
+			
+			visit[subjects.PR] = true;
+			subject[subjects.PR].Points++;
+			
+			events++;
+		}
+	};
 	mapTileData[8].map[((4 * mapW[8]) + 13)].eventEnter = function(c)
     { if (player.direction == directions.right) { mapNo = 2; c.placeAt(5, 29); } };
 	mapTileData[8].map[((5 * mapW[8]) + 13)].eventEnter = function(c)
     { if (player.direction == directions.right) { mapNo = 2; c.placeAt(5, 30); } };
-	/*****/
+	
 	
 	/* Перемещение с карты 2 на карту 9 и обратно */
-	mapTileData[2].map[((29 * mapW[2]) + 26)].eventEnter = function(c)
-    { if (player.direction == directions.right) { mapNo = 9; c.placeAt(1, 4); } };
-	mapTileData[2].map[((30 * mapW[2]) + 26)].eventEnter = function(c)
-    { if (player.direction == directions.right) { mapNo = 9; c.placeAt(1, 5); } };
-	
+	mapTileData[2].map[((29 * mapW[2]) + 26)].eventEnter = function(c) {
+		if (player.direction == directions.right && visit[subjects.SS] == false && events < 3) {
+			mapNo = 9;
+			c.placeAt(1, 4);
+			
+			visit[subjects.SS] = true;
+			subject[subjects.SS].Points++;
+			
+			events++;
+		}
+	};
+	mapTileData[2].map[((30 * mapW[2]) + 26)].eventEnter = function(c) {
+		if (player.direction == directions.right && visit[subjects.SS] == false && events < 3) {
+			mapNo = 9;
+			c.placeAt(1, 5);
+			
+			visit[subjects.SS] = true;
+			subject[subjects.SS].Points++;
+			
+			events++;
+		}
+	};
 	mapTileData[9].map[((4 * mapW[9]) + 0)].eventEnter = function(c)
     { if (player.direction == directions.left) { mapNo = 2; c.placeAt(25, 29); } };
 	mapTileData[9].map[((5 * mapW[9]) + 0)].eventEnter = function(c)
     { if (player.direction == directions.left) { mapNo = 2; c.placeAt(25, 30); } };
-	/*****/
+	
 	
 	
 
