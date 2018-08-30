@@ -32,6 +32,6 @@ function Character() {
 		w: 18,
 		h: 30
 	}];
-	this.inventory = new Inventory(3);
+	this.inventory = new Inventory(0);
 }
 

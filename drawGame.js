@@ -142,6 +142,11 @@ function drawGame() {
 		ctx.fillText("", 10, 40);
 	}
 	
+	ctx.fillStyle = '#ffffff';
+	ctx.font = "bold 10pt helvetica";
+	ctx.fillText('[E] Информация', 10, 20);
+	ctx.fillText('[Q] Расписание', 10, 40);
+	
 	if(info) {
 		ctx.fillStyle = '#000000';
 		ctx.fillRect(100, 100, 440, 280);
@@ -169,6 +174,31 @@ function drawGame() {
 			ctx.font = 'bold 12pt helvetica';
 			ctx.fillText('Дней до РК осталось: ' + (13 - dayNo), 125, 355);
 		}
+	}
+	
+	if(schedule) {
+		ctx.fillStyle = '#b2b2b2';
+		ctx.fillRect(100, 100, 440, 280);
+		
+		ctx.fillStyle = '#333333';
+		ctx.font = 'bold 17pt helvetica';
+		ctx.fillText('РАСПИСАНИЕ', 240, 135);
+		
+		ctx.font = '16pt helvetica';
+		ctx.fillText('Информатика', 125, 180);
+		ctx.fillText('Математический анализ', 125, 210);
+		ctx.fillText('Линейная алгебра', 125, 240);
+		ctx.fillText('Иностранный язык', 125, 270);
+		ctx.fillText('Социальные науки', 125, 300);
+		ctx.fillText('Языки программирования', 125, 330);
+		
+		ctx.fillStyle = '#870000';
+		ctx.fillText('309', 480, 180);
+		ctx.fillText('203', 480, 210);
+		ctx.fillText('201', 480, 240);
+		ctx.fillText('206', 480, 270);
+		ctx.fillText('205', 480, 300);
+		ctx.fillText('202', 480, 330);
 	}
 	
 	lastFrameTime = currentFrameTime;

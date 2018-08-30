@@ -7,7 +7,8 @@ let ctx = null,
 	frameCount = 0,
 	framesLastSecond = 0,
 	lastFrameTime = 0,
-	info = false;
+	info = false,
+	schedule = false;
 
 const tileW = 40,
 	  tileH = 40;
@@ -27,7 +28,9 @@ const keysDown = {
 	65: false,
 	68: false,
 	
-	69: false
+	69: false,
+	
+	81: false
 };
 
 const directions = {
@@ -167,8 +170,11 @@ window.onload = function() {
 		if (e.keyCode == 80) {
 			currentSpeed = (currentSpeed >= (gameSpeeds.length - 1) ? 0 : currentSpeed + 1)
 		}
-		if (e.keyCode == 69) {
+		if (e.keyCode == 69 && !schedule) {
 			info = !info;
+		}
+		if (e.keyCode == 81 && !info) {
+			schedule = !schedule;
 		}
 	});
 
