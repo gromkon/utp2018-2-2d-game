@@ -1,4 +1,4 @@
-let dayNo = 0;
+let dayNo = 1;
 let events = 0;
 let visit = {}
 visit[0] = false;

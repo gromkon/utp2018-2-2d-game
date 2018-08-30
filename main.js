@@ -6,22 +6,28 @@ let ctx = null,
 	currentSecond = 0,
 	frameCount = 0,
 	framesLastSecond = 0,
-	lastFrameTime = 0;
+	lastFrameTime = 0,
+	info = false;
 
 const tileW = 40,
-	tileH = 40;
+	  tileH = 40;
 
 const keysDown = {
 	16: false,
+	
 	37: false,
 	38: false,
 	39: false,
 	40: false,
+	
 	101: false,
+	
 	87: false,
 	83: false,
 	65: false,
-	68: false
+	68: false,
+	
+	69: false
 };
 
 const directions = {
@@ -160,6 +166,9 @@ window.onload = function() {
 		}
 		if (e.keyCode == 80) {
 			currentSpeed = (currentSpeed >= (gameSpeeds.length - 1) ? 0 : currentSpeed + 1)
+		}
+		if (e.keyCode == 69) {
+			info = !info;
 		}
 	});
 
