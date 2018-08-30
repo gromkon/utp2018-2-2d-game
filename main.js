@@ -179,7 +179,7 @@ window.onload = function() {
 	mapTileData[8].buildMapFromData(gameMap[8], mapW[8], mapH[8]);
 	mapTileData[9].buildMapFromData(gameMap[9], mapW[9], mapH[9]);
 	
-	mapTileData[0].map[((5 * mapW[0]) + 14)].eventEnter = function(c) {
+	mapTileData[0].map[((5 * mapW[0]) + 6)].eventEnter = function(c) {
 		if (player.direction == directions.right) {
 			mapNo = 1;
 			player.direction = directions.up;
@@ -190,7 +190,8 @@ window.onload = function() {
 	mapTileData[1].map[((23 * mapW[1]) + 5)].eventEnter = function(c) {
 		if (player.direction == directions.down) {
 			mapNo = 0;
-			c.placeAt(13, 5);
+			player.direction == directions.left;
+			c.placeAt(5, 5);
 			
 			nextDay();
 		}
@@ -431,14 +432,7 @@ window.onload = function() {
 	
 	
 
-	const tree01 = new MapObject(1),
-		tree02 = new MapObject(1),
-		grass1 = new MapObject(2),
-		grass2 = new MapObject(2),
-		stone1 = new MapObject(3),
-		stone2 = new MapObject(3),
-
-		roof01 = new MapObject(4),
+	const roof01 = new MapObject(4),
 		roof02 = new MapObject(4),
 
 		roof1 = new MapObject(5),
@@ -454,13 +448,6 @@ window.onload = function() {
 		tree15 = new MapObject(1),
 
 		fountain = new MapObject(9);
-
-	tree01.placeAt(2, 13, 0);
-	tree02.placeAt(9, 9, 0);
-	grass1.placeAt(2, 10, 0);
-	grass2.placeAt(2, 11, 0);
-	stone1.placeAt(2, 2, 0);
-	stone2.placeAt(7, 10, 0);
 
 	roof01.placeAt(1, 23, 1);
 	roof02.placeAt(36, 23, 1);
