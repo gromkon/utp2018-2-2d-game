@@ -202,15 +202,23 @@ window.onload = function() {
 		}
 	};
 
-	mapTileData[1].map[((23 * mapW[1]) + 5)].eventEnter = function(c) {
+	function f(c) {
 		if (player.direction == directions.down) {
 			mapNo = 0;
 			player.direction == directions.left;
 			c.placeAt(5, 5);
-			
 			nextDay();
 		}
 	};
+	
+	mapTileData[1].map[((23 * mapW[1]) + 5)].eventEnter = f;
+	mapTileData[1].map[((23 * mapW[1]) + 4)].eventEnter = f;
+	mapTileData[1].map[((23 * mapW[1]) + 3)].eventEnter = f;
+	mapTileData[1].map[((23 * mapW[1]) + 2)].eventEnter = f;
+	mapTileData[1].map[((23 * mapW[1]) + 37)].eventEnter = f;
+	mapTileData[1].map[((23 * mapW[1]) + 38)].eventEnter = f;
+	mapTileData[1].map[((23 * mapW[1]) + 39)].eventEnter = f;
+	mapTileData[1].map[((23 * mapW[1]) + 40)].eventEnter = f;
     
     
     /* Перемещение с карты 1 на карту 2 и обратно (НЕ ТРОГАТЬ) */
