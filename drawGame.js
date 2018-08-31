@@ -10,7 +10,9 @@ function drawGame() {
 
 	let currentFrameTime = Date.now(),
 		timeElapsed = currentFrameTime - lastFrameTime;
+	
 	gameTime += Math.floor(timeElapsed * gameSpeeds[currentSpeed].mult);
+	
 	let sec = Math.floor(Date.now() / 1000);
 
 	if (sec != currentSecond) {
@@ -132,13 +134,110 @@ function drawGame() {
 		}
 	}
 	ctx.textAlign = "left";
-	ctx.font = "italic bold 50pt sans-serif";
+	ctx.font = "bold 50pt helvetica";
 	ctx.fillStyle = "#f90606";
 	if (gameSpeeds[currentSpeed].name == "Paused") {
 		ctx.fillText("Пауза", 235, 260);
 	} else {
 		ctx.fillText("", 10, 40);
 	}
+	
+	ctx.fillStyle = '#ffffff';
+	ctx.font = "bold 10pt helvetica";
+	ctx.fillText('[E] Информация', 10, 20);
+	ctx.fillText('[Q] Расписание', 10, 40);
+	
+	if(info) {
+		ctx.fillStyle = '#000000';
+		ctx.fillRect(100, 100, 440, 280);
+		
+		ctx.font = 'bold 13pt helvetica';
+		ctx.fillStyle = '#dbdbdb';
+		ctx.fillText('День ' + dayNo, 125, 130);
+		
+		if (dayNo < 13) {
+			ctx.fillText('Успеваемость: ', 125, 180);
+			ctx.font = "11pt helvetica";
+			
+			ctx.fillText('Информатика  '
+						 + Math.round(100/subject[subjects.CS].Lessons
+									  * subject[subjects.CS].Points) + '%',
+						 125, 205);
+			ctx.fillText('Математический анализ  '
+						 + Math.round(100/subject[subjects.MA].Lessons
+									  * subject[subjects.MA].Points) + '%',
+						 125, 225);
+			ctx.fillText('Линейная алгебра  '
+						 + Math.round(100/subject[subjects.LA].Lessons
+									  * subject[subjects.LA].Points) + '%',
+						 125, 245);
+			ctx.fillText('Иностранный язык  '
+						 + Math.round(100/subject[subjects.EN].Lessons
+									  * subject[subjects.EN].Points) + '%',
+						 125, 265);
+			ctx.fillText('Социальные науки  '
+						 + Math.round(100/subject[subjects.SS].Lessons
+									  * subject[subjects.SS].Points) + '%',
+						 125, 285);
+			ctx.fillText('Языки программирования  '
+						 + Math.round(100/subject[subjects.PR].Lessons
+									  * subject[subjects.PR].Points) + '%',
+						 125, 305);
+			
+			ctx.font = 'bold 12pt helvetica';
+			if (13 - dayNo < 4) ctx.fillStyle = '#ff0000';
+			ctx.fillText('Дней до сессии осталось: ' + (13 - dayNo), 125, 355);
+			
+		} else {
+			
+			ctx.fillStyle = '#dbdbdb';
+			ctx.fillText('Успеваемость: ', 125, 180);
+			ctx.font = "11pt helvetica";
+			
+			ctx.fillText('Информатика ', 125, 205);
+			ctx.fillText('Математический анализ  ', 125, 225);
+			ctx.fillText('Линейная алгебра  ', 125, 245);
+			ctx.fillText('Иностранный язык  ', 125, 265);
+			ctx.fillText('Социальные науки  ', 125, 285);
+			ctx.fillText('Языки программирования  ', 125, 305);
+			
+			ctx.fillText(subject[subjects.CS].Res, 485, 205);
+			ctx.fillText(subject[subjects.MA].Res, 485, 225);
+			ctx.fillText(subject[subjects.LA].Res, 485, 245);
+			ctx.fillText(subject[subjects.EN].Res, 485, 265);
+			ctx.fillText(subject[subjects.SS].Res, 485, 285);
+			ctx.fillText(subject[subjects.PR].Res, 485, 305);
+			
+			ctx.font = 'bold 12pt helvetica';
+			ctx.fillText('Сессия ', 125, 355);
+		}
+	}
+	
+	if(schedule) {
+		ctx.fillStyle = '#b2b2b2';
+		ctx.fillRect(100, 100, 440, 280);
+		
+		ctx.fillStyle = '#333333';
+		ctx.font = 'bold 17pt helvetica';
+		ctx.fillText('РАСПИСАНИЕ', 240, 135);
+		
+		ctx.font = '16pt helvetica';
+		ctx.fillText('Информатика', 125, 180);
+		ctx.fillText('Математический анализ', 125, 210);
+		ctx.fillText('Линейная алгебра', 125, 240);
+		ctx.fillText('Иностранный язык', 125, 270);
+		ctx.fillText('Социальные науки', 125, 300);
+		ctx.fillText('Языки программирования', 125, 330);
+		
+		ctx.fillStyle = '#870000';
+		ctx.fillText('309', 480, 180);
+		ctx.fillText('203', 480, 210);
+		ctx.fillText('201', 480, 240);
+		ctx.fillText('206', 480, 270);
+		ctx.fillText('205', 480, 300);
+		ctx.fillText('202', 480, 330);
+	}
+	
 	lastFrameTime = currentFrameTime;
 	requestAnimationFrame(drawGame);
 }
