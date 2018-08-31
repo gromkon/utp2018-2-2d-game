@@ -259,10 +259,14 @@ window.onload = function() {
 			mapNo = 3;
 			c.placeAt(1, 2);
 			
-			visit[subjects.LA] = true;
-			subject[subjects.LA].Points++;
-			
-			events++;
+			if(dayNo < 13) {
+				visit[subjects.LA] = true;
+				subject[subjects.LA].Points++;
+				events++;
+				
+			} else {
+				setRes(subjects.LA);
+			}
 		}
 	};
 	mapTileData[2].map[((33 * mapW[2]) + 9)].eventEnter = function(c) {
@@ -270,13 +274,16 @@ window.onload = function() {
 			mapNo = 3;
 			c.placeAt(1, 3);
 			
-			visit[subjects.LA] = true;
-			subject[subjects.LA].Points++;
-			
-			events++;
+			if(dayNo < 13) {
+				visit[subjects.LA] = true;
+				subject[subjects.LA].Points++;
+				events++;
+				
+			} else {
+				setRes(subjects.LA);
+			}
 		}
 	};
-	
 	mapTileData[3].map[((2 * mapW[3]) + 0)].eventEnter = function(c)
     { if (player.direction == directions.left) { mapNo = 2; c.placeAt(8, 32); } };
 	mapTileData[3].map[((3 * mapW[3]) + 0)].eventEnter = function(c)
@@ -289,10 +296,14 @@ window.onload = function() {
 			mapNo = 4;
 			c.placeAt(1, 11);
 			
-			visit[subjects.MA] = true;
-			subject[subjects.MA].Points++;
-			
-			events++;
+			if(dayNo < 13) {
+				visit[subjects.MA] = true;
+				subject[subjects.MA].Points++;
+				events++;
+				
+			} else {
+				setRes(subjects.MA);
+			}
 		}
 	};
 	mapTileData[2].map[((27 * mapW[2]) + 9)].eventEnter = function(c) {
@@ -300,13 +311,16 @@ window.onload = function() {
 			mapNo = 4;
 			c.placeAt(1, 12);
 			
-			visit[subjects.MA] = true;
-			subject[subjects.MA].Points++;
-			
-			events++;
+			if(dayNo < 13) {
+				visit[subjects.MA] = true;
+				subject[subjects.MA].Points++;
+				events++;
+				
+			} else {
+				setRes(subjects.MA);
+			}
 		}
 	};
-	
 	mapTileData[4].map[((11 * mapW[4]) + 0)].eventEnter = function(c)
     { if (player.direction == directions.left) { mapNo = 2; c.placeAt(8, 26); } };
 	mapTileData[4].map[((12 * mapW[4]) + 0)].eventEnter = function(c)
@@ -341,10 +355,14 @@ window.onload = function() {
 			mapNo = 6;
 			c.placeAt(10, 11);
 			
-			visit[subjects.EN] = true;
-			subject[subjects.EN].Points++;
-			
-			events++;
+			if(dayNo < 13) {
+				visit[subjects.EN] = true;
+				subject[subjects.EN].Points++;
+				events++;
+				
+			} else {
+				setRes(subjects.EN);
+			}
 		}
 	};
 	mapTileData[2].map[((27 * mapW[2]) + 21)].eventEnter = function(c) {
@@ -352,13 +370,16 @@ window.onload = function() {
 			mapNo = 6;
 			c.placeAt(10, 12);
 			
-			visit[subjects.EN] = true;
-			subject[subjects.EN].Points++;
-			
-			events++;
+			if(dayNo < 13) {
+				visit[subjects.EN] = true;
+				subject[subjects.EN].Points++;
+				events++;
+				
+			} else {
+				setRes(subjects.EN);
+			}
 		}
 	};
-	
 	mapTileData[6].map[((11 * mapW[6]) + 11)].eventEnter = function(c)
     { if (player.direction == directions.right) { mapNo = 2; c.placeAt(22, 26); } };
 	mapTileData[6].map[((12 * mapW[6]) + 11)].eventEnter = function(c)
@@ -371,10 +392,14 @@ window.onload = function() {
 			mapNo = 7;
 			c.placeAt(1, 11);
 			
-			visit[subjects.CS] = true;
-			subject[subjects.CS].Points++;
-			
-			events++;
+			if(dayNo < 13) {
+				visit[subjects.CS] = true;
+				subject[subjects.CS].Points++;
+				events++;
+				
+			} else {
+				setRes(subjects.CS);
+			}
 		}
 	};
 	mapTileData[2].map[((14 * mapW[2]) + 5)].eventEnter = function(c) {
@@ -382,13 +407,16 @@ window.onload = function() {
 			mapNo = 7;
 			c.placeAt(1, 12);
 			
-			visit[subjects.CS] = true;
-			subject[subjects.CS].Points++;
-			
-			events++;
+			if(dayNo < 13) {
+				visit[subjects.CS] = true;
+				subject[subjects.CS].Points++;
+				events++;
+				
+			} else {
+				setRes(subjects.CS);
+			}
 		}
 	};
-	
 	mapTileData[7].map[((11 * mapW[7]) + 0)].eventEnter = function(c)
     { if (player.direction == directions.left) { mapNo = 2; c.placeAt(4, 13); } };
 	mapTileData[7].map[((12 * mapW[7]) + 0)].eventEnter = function(c)
@@ -401,10 +429,14 @@ window.onload = function() {
 			mapNo = 8;
 			c.placeAt(12, 4);
 			
-			visit[subjects.PR] = true;
-			subject[subjects.PR].Points++;
-			
-			events++;
+			if(dayNo < 13) {
+				visit[subjects.PR] = true;
+				subject[subjects.PR].Points++;
+				events++;
+				
+			} else {
+				setRes(subjects.PR);
+			}
 		}
 	};
 	mapTileData[2].map[((30 * mapW[2]) + 4)].eventEnter = function(c) {
@@ -412,10 +444,14 @@ window.onload = function() {
 			mapNo = 8;
 			c.placeAt(12, 5);
 			
-			visit[subjects.PR] = true;
-			subject[subjects.PR].Points++;
-			
-			events++;
+			if(dayNo < 13) {
+				visit[subjects.PR] = true;
+				subject[subjects.PR].Points++;
+				events++;
+				
+			} else {
+				setRes(subjects.PR);
+			}
 		}
 	};
 	mapTileData[8].map[((4 * mapW[8]) + 13)].eventEnter = function(c)
@@ -430,10 +466,14 @@ window.onload = function() {
 			mapNo = 9;
 			c.placeAt(1, 4);
 			
-			visit[subjects.SS] = true;
-			subject[subjects.SS].Points++;
-			
-			events++;
+			if(dayNo < 13) {
+				visit[subjects.SS] = true;
+				subject[subjects.SS].Points++;
+				events++;
+				
+			} else {
+				setRes(subjects.SS);
+			}
 		}
 	};
 	mapTileData[2].map[((30 * mapW[2]) + 26)].eventEnter = function(c) {
@@ -441,10 +481,14 @@ window.onload = function() {
 			mapNo = 9;
 			c.placeAt(1, 5);
 			
-			visit[subjects.SS] = true;
-			subject[subjects.SS].Points++;
-			
-			events++;
+			if(dayNo < 13) {
+				visit[subjects.SS] = true;
+				subject[subjects.SS].Points++;
+				events++;
+				
+			} else {
+				setRes(subjects.SS);
+			}
 		}
 	};
 	mapTileData[9].map[((4 * mapW[9]) + 0)].eventEnter = function(c)

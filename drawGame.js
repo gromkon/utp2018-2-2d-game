@@ -155,24 +155,61 @@ function drawGame() {
 		ctx.fillStyle = '#dbdbdb';
 		ctx.fillText('День ' + dayNo, 125, 130);
 		
-		ctx.fillText('Успеваемость: ', 125, 180);
-		ctx.font = "11pt helvetica";
-		ctx.fillText('Информатика  ' + Math.round(100/8 * subject[subjects.CS].Points) + '%',
-					 125, 205);
-		ctx.fillText('Математический анализ  ' + Math.round(100/6 * subject[subjects.MA].Points) + '%',
-					 125, 225);
-		ctx.fillText('Линейная алгебра  ' + Math.round(100/6 * subject[subjects.LA].Points) + '%',
-					 125, 245);
-		ctx.fillText('Иностранный язык  ' + Math.round(100/2 * subject[subjects.EN].Points) + '%',
-					 125, 265);
-		ctx.fillText('Социальные науки  ' + Math.round(100/3 * subject[subjects.SS].Points) + '%',
-					 125, 285);
-		ctx.fillText('Языки программирования  ' + Math.round(100/7 * subject[subjects.PR].Points) + '%',
-					 125, 305);
-		
 		if (dayNo < 13) {
+			ctx.fillText('Успеваемость: ', 125, 180);
+			ctx.font = "11pt helvetica";
+			
+			ctx.fillText('Информатика  '
+						 + Math.round(100/subject[subjects.CS].Lessons
+									  * subject[subjects.CS].Points) + '%',
+						 125, 205);
+			ctx.fillText('Математический анализ  '
+						 + Math.round(100/subject[subjects.MA].Lessons
+									  * subject[subjects.MA].Points) + '%',
+						 125, 225);
+			ctx.fillText('Линейная алгебра  '
+						 + Math.round(100/subject[subjects.LA].Lessons
+									  * subject[subjects.LA].Points) + '%',
+						 125, 245);
+			ctx.fillText('Иностранный язык  '
+						 + Math.round(100/subject[subjects.EN].Lessons
+									  * subject[subjects.EN].Points) + '%',
+						 125, 265);
+			ctx.fillText('Социальные науки  '
+						 + Math.round(100/subject[subjects.SS].Lessons
+									  * subject[subjects.SS].Points) + '%',
+						 125, 285);
+			ctx.fillText('Языки программирования  '
+						 + Math.round(100/subject[subjects.PR].Lessons
+									  * subject[subjects.PR].Points) + '%',
+						 125, 305);
+			
 			ctx.font = 'bold 12pt helvetica';
-			ctx.fillText('Дней до РК осталось: ' + (13 - dayNo), 125, 355);
+			if (13 - dayNo < 4) ctx.fillStyle = '#ff0000';
+			ctx.fillText('Дней до сессии осталось: ' + (13 - dayNo), 125, 355);
+			
+		} else {
+			
+			ctx.fillStyle = '#dbdbdb';
+			ctx.fillText('Успеваемость: ', 125, 180);
+			ctx.font = "11pt helvetica";
+			
+			ctx.fillText('Информатика ', 125, 205);
+			ctx.fillText('Математический анализ  ', 125, 225);
+			ctx.fillText('Линейная алгебра  ', 125, 245);
+			ctx.fillText('Иностранный язык  ', 125, 265);
+			ctx.fillText('Социальные науки  ', 125, 285);
+			ctx.fillText('Языки программирования  ', 125, 305);
+			
+			ctx.fillText(subject[subjects.CS].Res, 485, 205);
+			ctx.fillText(subject[subjects.MA].Res, 485, 225);
+			ctx.fillText(subject[subjects.LA].Res, 485, 245);
+			ctx.fillText(subject[subjects.EN].Res, 485, 265);
+			ctx.fillText(subject[subjects.SS].Res, 485, 285);
+			ctx.fillText(subject[subjects.PR].Res, 485, 305);
+			
+			ctx.font = 'bold 12pt helvetica';
+			ctx.fillText('Сессия ', 125, 355);
 		}
 	}
 	
