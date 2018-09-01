@@ -7,8 +7,10 @@ let ctx = null,
 	frameCount = 0,
 	framesLastSecond = 0,
 	lastFrameTime = 0,
+	
 	info = false,
-	schedule = false;
+	schedule = false,
+	message = true;
 
 const tileW = 40,
 	  tileH = 40;
@@ -30,7 +32,11 @@ const keysDown = {
 	
 	69: false,
 	
-	81: false
+	81: false,
+	27: false,
+	
+	72: false,
+	84: false
 };
 
 const directions = {
@@ -94,8 +100,8 @@ MapObject.prototype.placeAt = function(nx, ny, mapN) {
 	mapNo = tmp;
 };
 
-let mapTileData = {}
 
+let mapTileData = {}
 mapTileData[0] = new TileMap();
 mapTileData[1] = new TileMap();
 mapTileData[2] = new TileMap();
@@ -170,11 +176,23 @@ window.onload = function() {
 		if (e.keyCode == 80) {
 			currentSpeed = (currentSpeed >= (gameSpeeds.length - 1) ? 0 : currentSpeed + 1)
 		}
-		if (e.keyCode == 69 && !schedule) {
+		if (e.keyCode == 69 && !schedule && !message) {
 			info = !info;
 		}
-		if (e.keyCode == 81 && !info) {
+		if (e.keyCode == 81 && !info && !message) {
 			schedule = !schedule;
+		}
+		if (e.keyCode == 27) {
+			if (dayNo == 1) message = false;
+			if (dayNo == 13) newGame();
+		}
+		if (e.keyCode == 72 && mapNo == 0) {
+			nextDay();
+		}
+		if (e.keyCode == 84 && mapNo != 0) {
+			mapNo = 0;
+			player.placeAt(1, 1);
+			nextDay();
 		}
 	});
 
@@ -203,14 +221,13 @@ window.onload = function() {
 	};
 
 	function f(c) {
-		if (player.direction == directions.down) {
+		if (player.direction == directions.down && dayNo != 13) {
 			mapNo = 0;
 			player.direction == directions.left;
 			c.placeAt(5, 5);
 			nextDay();
 		}
 	};
-	
 	mapTileData[1].map[((23 * mapW[1]) + 5)].eventEnter = f;
 	mapTileData[1].map[((23 * mapW[1]) + 4)].eventEnter = f;
 	mapTileData[1].map[((23 * mapW[1]) + 3)].eventEnter = f;
@@ -221,7 +238,7 @@ window.onload = function() {
 	mapTileData[1].map[((23 * mapW[1]) + 40)].eventEnter = f;
     
     
-    /* Перемещение с карты 1 на карту 2 и обратно (НЕ ТРОГАТЬ) */
+	
     mapTileData[1].map[((0 * mapW[1]) + 18)].eventEnter = function(c)
     { if (player.direction == directions.up) { mapNo = 2; c.placeAt(12, 42); } };
     mapTileData[1].map[((0 * mapW[1]) + 19)].eventEnter = function(c)
@@ -251,7 +268,7 @@ window.onload = function() {
     { if (player.direction == directions.down) { mapNo = 1; c.placeAt(23, 1); } };
     mapTileData[2].map[((43 * mapW[2]) + 18)].eventEnter = function(c)
     { if (player.direction == directions.down) { mapNo = 1; c.placeAt(24, 1); } };
-    /* (НЕ ТРОГАТЬ) */
+	
 	
 	/* Перемещение с карты 2 на карту 3 и обратно */
 	mapTileData[2].map[((32 * mapW[2]) + 9)].eventEnter = function(c) {

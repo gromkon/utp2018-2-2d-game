@@ -18,3 +18,16 @@ function nextDay() {
 	visit[5] = false;
 	events = 0;
 }
+
+function newGame() {
+	mapNo = 0;
+	passed = 0;
+	exams = 0;
+	player.placeAt(1, 1);
+	dayNo = 0;
+	for (i = 0; i < 6; i++) {
+		subject[i].Points = 0;
+		subject[i].Res = 'н/а';
+	}
+	nextDay();
+}
