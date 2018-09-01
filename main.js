@@ -94,8 +94,8 @@ MapObject.prototype.placeAt = function(nx, ny, mapN) {
 	mapNo = tmp;
 };
 
-let mapTileData = {}
 
+let mapTileData = {}
 mapTileData[0] = new TileMap();
 mapTileData[1] = new TileMap();
 mapTileData[2] = new TileMap();
@@ -210,7 +210,6 @@ window.onload = function() {
 			nextDay();
 		}
 	};
-	
 	mapTileData[1].map[((23 * mapW[1]) + 5)].eventEnter = f;
 	mapTileData[1].map[((23 * mapW[1]) + 4)].eventEnter = f;
 	mapTileData[1].map[((23 * mapW[1]) + 3)].eventEnter = f;
@@ -221,7 +220,7 @@ window.onload = function() {
 	mapTileData[1].map[((23 * mapW[1]) + 40)].eventEnter = f;
     
     
-    /* Перемещение с карты 1 на карту 2 и обратно (НЕ ТРОГАТЬ) */
+	
     mapTileData[1].map[((0 * mapW[1]) + 18)].eventEnter = function(c)
     { if (player.direction == directions.up) { mapNo = 2; c.placeAt(12, 42); } };
     mapTileData[1].map[((0 * mapW[1]) + 19)].eventEnter = function(c)
@@ -251,7 +250,7 @@ window.onload = function() {
     { if (player.direction == directions.down) { mapNo = 1; c.placeAt(23, 1); } };
     mapTileData[2].map[((43 * mapW[2]) + 18)].eventEnter = function(c)
     { if (player.direction == directions.down) { mapNo = 1; c.placeAt(24, 1); } };
-    /* (НЕ ТРОГАТЬ) */
+	
 	
 	/* Перемещение с карты 2 на карту 3 и обратно */
 	mapTileData[2].map[((32 * mapW[2]) + 9)].eventEnter = function(c) {

@@ -214,7 +214,7 @@ function drawGame() {
 	}
 	
 	if(schedule) {
-		ctx.fillStyle = '#b2b2b2';
+		ctx.fillStyle = '#dbdbdb';
 		ctx.fillRect(100, 100, 440, 280);
 		
 		ctx.fillStyle = '#333333';
