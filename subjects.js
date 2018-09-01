@@ -1,3 +1,6 @@
+let passed = 0,
+	exams = 0;
+
 const subjects = {
 	CS: 0, //Информатика
 	MA: 1, //Математический анализ
@@ -43,22 +46,33 @@ function setRes(a) {
 	if(a == 3 || a == 4) {
 		if(100 / subject[a].Lessons * subject[a].Points < 60) {
 			subject[a].Res = 'незачет';
+			exams++;
 		} else {
 			subject[a].Res = 'зачет';
+			passed++;
+			exams++;
 		}
 	} else {
 		if(100 / subject[a].Lessons * subject[a].Points < 60) {
 			subject[a].Res = 'неуд';
+			exams++;
 		}
 		if(100 / subject[a].Lessons * subject[a].Points >= 60 &&
 		   100 / subject[a].Lessons * subject[a].Points < 71) {
 			subject[a].Res = 'уд';
+			passed++;
+			exams++;
 		}
 		if (100 / subject[a].Lessons * subject[a].Points >= 71 &&
 			100 / subject[a].Lessons * subject[a].Points < 85) {
 			subject[a].Res = 'хор';
-		} else {
+			passed++;
+			exams++;
+		}
+		if (100 / subject[a].Lessons * subject[a].Points >= 85) {
 			subject[a].Res = 'отл';
+			passed++;
+			exams++;
 		}
 	}
 }

@@ -7,8 +7,10 @@ let ctx = null,
 	frameCount = 0,
 	framesLastSecond = 0,
 	lastFrameTime = 0,
+	
 	info = false,
-	schedule = false;
+	schedule = false,
+	message = true;
 
 const tileW = 40,
 	  tileH = 40;
@@ -30,7 +32,11 @@ const keysDown = {
 	
 	69: false,
 	
-	81: false
+	81: false,
+	27: false,
+	
+	72: false,
+	84: false
 };
 
 const directions = {
@@ -170,11 +176,23 @@ window.onload = function() {
 		if (e.keyCode == 80) {
 			currentSpeed = (currentSpeed >= (gameSpeeds.length - 1) ? 0 : currentSpeed + 1)
 		}
-		if (e.keyCode == 69 && !schedule) {
+		if (e.keyCode == 69 && !schedule && !message) {
 			info = !info;
 		}
-		if (e.keyCode == 81 && !info) {
+		if (e.keyCode == 81 && !info && !message) {
 			schedule = !schedule;
+		}
+		if (e.keyCode == 27) {
+			if (dayNo == 1) message = false;
+			if (dayNo == 13) newGame();
+		}
+		if (e.keyCode == 72 && mapNo == 0) {
+			nextDay();
+		}
+		if (e.keyCode == 84 && mapNo != 0) {
+			mapNo = 0;
+			player.placeAt(1, 1);
+			nextDay();
 		}
 	});
 
@@ -203,7 +221,7 @@ window.onload = function() {
 	};
 
 	function f(c) {
-		if (player.direction == directions.down) {
+		if (player.direction == directions.down && dayNo != 13) {
 			mapNo = 0;
 			player.direction == directions.left;
 			c.placeAt(5, 5);

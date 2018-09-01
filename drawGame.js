@@ -144,8 +144,20 @@ function drawGame() {
 	
 	ctx.fillStyle = '#ffffff';
 	ctx.font = "bold 10pt helvetica";
-	ctx.fillText('[E] Информация', 10, 20);
-	ctx.fillText('[Q] Расписание', 10, 40);
+	
+	if(!(message || info || schedule)) {
+		ctx.fillText('[E] Информация', 10, 20);
+		ctx.fillText('[Q] Расписание', 10, 40);
+		
+		if(dayNo < 13) {
+			if(mapNo == 0) {
+				ctx.fillText('Посидеть сегодня дома [H]', 450, 20);
+			}
+			if(mapNo == 2) {
+				ctx.fillText('Телепорт домой [T]', 500, 20);
+			}
+		}
+	}
 	
 	if(info) {
 		ctx.fillStyle = '#000000';
@@ -188,6 +200,9 @@ function drawGame() {
 			if (13 - dayNo < 4) ctx.fillStyle = '#ff0000';
 			ctx.fillText('Дней до сессии осталось: ' + (13 - dayNo), 125, 355);
 			
+			ctx.font = 'bold 12pt helvetica';
+			ctx.fillText('[E] Закрыть', 420, 355);
+			
 		} else {
 			
 			ctx.fillStyle = '#dbdbdb';
@@ -210,6 +225,9 @@ function drawGame() {
 			
 			ctx.font = 'bold 12pt helvetica';
 			ctx.fillText('Сессия ', 125, 355);
+			
+			ctx.font = 'bold 12pt helvetica';
+			ctx.fillText('[E] Закрыть', 420, 355);
 		}
 	}
 	
@@ -229,13 +247,56 @@ function drawGame() {
 		ctx.fillText('Социальные науки', 125, 300);
 		ctx.fillText('Языки программирования', 125, 330);
 		
-		ctx.fillStyle = '#870000';
 		ctx.fillText('309', 480, 180);
 		ctx.fillText('203', 480, 210);
 		ctx.fillText('201', 480, 240);
 		ctx.fillText('206', 480, 270);
 		ctx.fillText('205', 480, 300);
 		ctx.fillText('202', 480, 330);
+		
+		ctx.font = 'bold 12pt helvetica';
+		ctx.fillText('[Q] Закрыть', 420, 365);
+	}
+	
+	if(exams == 6) {
+		info = false;
+		schedule = false;
+		message = true;
+	}
+	
+	if(message) {
+		if (dayNo == 1) {
+			ctx.fillStyle = '#000000';
+			ctx.fillRect(100, 150, 440, 200);
+		
+			ctx.font = 'bold 13pt helvetica';
+			ctx.fillStyle = '#dbdbdb';
+			ctx.fillText('До сессии две недели, а вы ничего не знаете!', 125, 200);
+			ctx.fillText('Может пора это исправить?', 125, 225);
+		
+			ctx.fillText('[Esc] Закрыть', 400, 330);
+		}
+		if (dayNo == 13) {
+			ctx.fillStyle = '#000000';
+			ctx.fillRect(100, 150, 440, 200);
+			
+			ctx.font = 'bold 13pt helvetica';
+			ctx.fillStyle = '#dbdbdb';
+			
+			if(passed == 6) {
+				ctx.fillText('Вы успешно сдали все экзамены!', 125, 200);
+				ctx.fillText('[Esc] Новая игра', 380, 330);
+			} else {
+				ctx.fillText('Вы не закрыли сессию', 125, 200);
+				
+				ctx.font = '12pt helvetica';
+				ctx.fillText('Видно не судьба', 125, 245);
+				ctx.fillText('видно не судьба', 125, 265);
+				
+				ctx.font = 'bold 13pt helvetica';
+				ctx.fillText('[Esc] Новая игра', 380, 330);
+			}
+		}
 	}
 	
 	lastFrameTime = currentFrameTime;
