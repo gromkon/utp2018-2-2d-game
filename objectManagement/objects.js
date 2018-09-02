@@ -162,7 +162,7 @@ const objectTypes = {
 		zIndex: 2
 	},
 	13: {
-		sp: tMap7,
+		sp: tMap71,
 		sprite: [{
 			x: 0,
 			y: 0,
@@ -182,6 +182,18 @@ const objectTypes = {
 			h: 66
 		}],
 		offset: [-4, -32],
+		collision: objectCollision.solid,
+		zIndex: 2
+	},
+	16: {
+		sp: tMap72,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 44,
+			h: 70
+		}],
+		offset: [-4, -30],
 		collision: objectCollision.solid,
 		zIndex: 2
 	}

@@ -64,7 +64,8 @@ let water = new Image(),
     hero = new Image(),
 	tMap3 = new Image(),
 	tMap4 = new Image(),
-	tMap7 = new Image(),
+	tMap71 = new Image(),
+	tMap72 = new Image(),
 	tMap8 = new Image(),
     
     waterLoaded = false,
@@ -137,7 +138,8 @@ let water = new Image(),
     heroLoaded = false,
 	tMap3Loaded = false,
 	tMap4Loaded = false,
-	tMap7Loaded = false,
+	tMap71Loaded = false,
+	tMap72Loaded = false,
 	tMap8Loaded = false;
 
 let loaded = {
@@ -171,7 +173,8 @@ let loaded = {
 	
 	22: { sprite: tMap3, spriteLoaded: tMap3Loaded },
 	23: { sprite: tMap4, spriteLoaded: tMap4Loaded },
-	24: { sprite: tMap7, spriteLoaded: tMap7Loaded },
+	24: { sprite: tMap71, spriteLoaded: tMap71Loaded },
+	58: { sprite: tMap72, spriteLoaded: tMap72Loaded },
 	25: { sprite: tMap8, spriteLoaded: tMap8Loaded },
     
 	26: { sprite: corner11, spriteLoaded: corner11Loaded },
@@ -298,5 +301,6 @@ objectFountain.src = 'sprites/fountain.png';
 hero.src = 'sprites/characters/hero.png';
 tMap3.src = 'sprites/characters/teacher3.png';
 tMap4.src = 'sprites/characters/teacher4.png';
-tMap7.src = 'sprites/characters/teacher7.png';
+tMap71.src = 'sprites/characters/teacher71.png';
+tMap72.src = 'sprites/characters/teacher72.png';
 tMap8.src = 'sprites/characters/teacher8.png';

@@ -1,4 +1,5 @@
-const teacher7 = new MapObject(13),
+const teacher71 = new MapObject(13),
+	  teacher72 = new MapObject(16),
 	  
 	  desk701 = new MapObject(10),
 	  desk702 = new MapObject(10),
@@ -43,7 +44,8 @@ const teacher7 = new MapObject(13),
 
 function objectsMap7() {
 	
-	teacher7.placeAt(3, 16, 7);
+	teacher71.placeAt(3, 16, 7);
+	teacher72.placeAt(8, 17, 7);
 	
 	desk701.placeAt(1, 2, 7);
 	desk702.placeAt(1, 4, 7);
