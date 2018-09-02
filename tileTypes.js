@@ -32,10 +32,10 @@ const tileTypes = {
 	17: { floor:floorTypes.solid, sprite: wall13 },
 	18: { floor:floorTypes.solid, sprite: wall14 },
 
-	27: { floor:floorTypes.solid, sprite: wall15 },
+	/*27: { floor:floorTypes.solid, sprite: wall15 },
 	28: { floor:floorTypes.solid, sprite: wall16 },
 	29: { floor:floorTypes.solid, sprite: wall17 },
-	30: { floor:floorTypes.solid, sprite: wall18 },
+	30: { floor:floorTypes.solid, sprite: wall18 },*/
 	
 	19: { floor:floorTypes.solid, sprite: corner11 },
 	20: { floor:floorTypes.solid, sprite: corner12 },

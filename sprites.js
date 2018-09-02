@@ -11,11 +11,11 @@ let water = new Image(),
     stairs = new Image(),
     
     floor1 = new Image(),
-	floor11 = new Image(),
-	floor12 = new Image(),
+    floor11 = new Image(),
+    floor12 = new Image(),
     floor2 = new Image(),
-	floor21 = new Image(),
-	floor22 = new Image(),
+    floor21 = new Image(),
+    floor22 = new Image(),
     floor3 = new Image(),
     floor31 = new Image(),
     floor32 = new Image(),
@@ -25,10 +25,6 @@ let water = new Image(),
     wall12 = new Image(),
     wall13 = new Image(),
     wall14 = new Image(),
-    wall15 = new Image(),
-    wall16 = new Image(),
-    wall17 = new Image(),
-    wall18 = new Image(),
     
     corner11 = new Image(),
     corner12 = new Image(),
@@ -39,19 +35,23 @@ let water = new Image(),
     corner17 = new Image(),
     corner18 = new Image(),
 	
-	glass1 = new Image(),
-	glass2 = new Image(),
-	glass3 = new Image(),
-	glass4 = new Image(),
+    glass1 = new Image(),
+    glass2 = new Image(),
+    glass3 = new Image(),
+    glass4 = new Image(),
 	
-	door1 = new Image(),
-	door2 = new Image(),
-	door3 = new Image(),
-	door4 = new Image(),
+    door1 = new Image(),
+    door2 = new Image(),
+    door3 = new Image(),
+    door4 = new Image(),
     
     objectTree = new Image(),
-    objectStone = new Image(),
-    objectGrass = new Image(),
+	
+    objectDesk1 = new Image(),
+    objectDesk2 = new Image(),
+    objectDesk3 = new Image(),
+	
+    objectBed = new Image(),
     
     objectRoof = new Image(),
     objectRoof1 = new Image(),
@@ -61,7 +61,12 @@ let water = new Image(),
     
     objectFountain = new Image(),
     
-    hero = new Image(),	
+    hero = new Image(),
+    tMap3 = new Image(),
+    tMap4 = new Image(),
+    tMap71 = new Image(),
+    tMap72 = new Image(),
+    tMap8 = new Image(),
     
     waterLoaded = false,
     pathLoaded = false,
@@ -76,11 +81,11 @@ let water = new Image(),
     stairsLoaded = false,
 
     floor1Loaded = false,
-	floor11Loaded = false,
-	floor12Loaded = false,
+    floor11Loaded = false,
+    floor12Loaded = false,
     floor2Loaded = false,
-	floor21Loaded = false,
-	floor22Loaded = false,
+    floor21Loaded = false,
+    floor22Loaded = false,
     floor3Loaded = false,
     floor31Loaded = false,
     floor32Loaded = false,
@@ -104,19 +109,23 @@ let water = new Image(),
     corner17Loaded = false,
     corner18Loaded = false,
 	
-	glass1Loaded = false,
-	glass2Loaded = false,
-	glass3Loaded = false,
-	glass4Loaded = false,
+    glass1Loaded = false,
+    glass2Loaded = false,
+    glass3Loaded = false,
+    glass4Loaded = false,
 	
-	door1Loaded = false,
-	door2Loaded = false,
-	door3Loaded = false,
-	door4Loaded = false,
+    door1Loaded = false,
+    door2Loaded = false,
+    door3Loaded = false,
+    door4Loaded = false,
 
     objectTreeLoaded = false,
-    objectStoneLoaded = false,
-    objectGrassLoaded = false,
+	
+    objectDesk1Loaded = false,
+    objectDesk2Loaded = false,
+    objectDesk3Loaded = false,
+	
+    objectBedLoaded = false,
 
     objectRoofLoaded = false,
     objectRoof1Loaded = false,
@@ -126,7 +135,12 @@ let water = new Image(),
 
     objectFountainLoaded = false,
 
-    heroLoaded = false;
+    heroLoaded = false,
+    tMap3Loaded = false,
+    tMap4Loaded = false,
+    tMap71Loaded = false,
+    tMap72Loaded = false,
+    tMap8Loaded = false;
 
 let loaded = {
 	1: { sprite: water, spriteLoaded: waterLoaded },
@@ -156,10 +170,12 @@ let loaded = {
 	19: { sprite: wall12, spriteLoaded: wall12Loaded },
 	20: { sprite: wall13, spriteLoaded: wall13Loaded },
 	21: { sprite: wall14, spriteLoaded: wall14Loaded },
-	22: { sprite: wall15, spriteLoaded: wall15Loaded },
-	23: { sprite: wall16, spriteLoaded: wall16Loaded },
-	24: { sprite: wall17, spriteLoaded: wall17Loaded },
-	25: { sprite: wall18, spriteLoaded: wall18Loaded },
+	
+	22: { sprite: tMap3, spriteLoaded: tMap3Loaded },
+	23: { sprite: tMap4, spriteLoaded: tMap4Loaded },
+	24: { sprite: tMap71, spriteLoaded: tMap71Loaded },
+	58: { sprite: tMap72, spriteLoaded: tMap72Loaded },
+	25: { sprite: tMap8, spriteLoaded: tMap8Loaded },
     
 	26: { sprite: corner11, spriteLoaded: corner11Loaded },
 	27: { sprite: corner12, spriteLoaded: corner12Loaded },
@@ -181,8 +197,12 @@ let loaded = {
 	55: { sprite: door4, spriteLoaded: door4Loaded },
     
 	34: { sprite: objectTree, spriteLoaded: objectTreeLoaded },
-	35: { sprite: objectStone, spriteLoaded: objectStoneLoaded },
-	36: { sprite: objectGrass, spriteLoaded: objectGrassLoaded },
+	
+	35: { sprite: objectDesk1, spriteLoaded: objectDesk1Loaded },
+	36: { sprite: objectDesk2, spriteLoaded: objectDesk2Loaded },
+	56: { sprite: objectDesk3, spriteLoaded: objectDesk3Loaded },
+	
+	57: { sprite: objectBed, spriteLoaded: objectBedLoaded },
     	
 	37: { sprite: objectRoof, spriteLoaded: objectRoofLoaded },
 	38: { sprite: objectRoof1, spriteLoaded: objectRoof1Loaded },
@@ -242,10 +262,6 @@ wall11.src = 'sprites/wall11.png';
 wall12.src = 'sprites/wall12.png';
 wall13.src = 'sprites/wall13.png';
 wall14.src = 'sprites/wall14.png';
-wall15.src = 'sprites/wall15.png';
-wall16.src = 'sprites/wall16.png';
-wall17.src = 'sprites/wall17.png';
-wall18.src = 'sprites/wall18.png';
 
 corner11.src = 'sprites/corner11.png';
 corner12.src = 'sprites/corner12.png';
@@ -267,8 +283,12 @@ door3.src = 'sprites/door3.png';
 door4.src = 'sprites/door4.png';
 
 objectTree.src = 'sprites/tree.png';
-objectStone.src = 'sprites/stone.png';
-objectGrass.src = 'sprites/grass.png';
+
+objectDesk1.src = 'sprites/desk1.png';
+objectDesk2.src = 'sprites/desk2.png';
+objectDesk3.src = 'sprites/desk3.png';
+
+objectBed.src = 'sprites/bed.png';
 
 objectRoof.src = 'sprites/roof.png';
 objectRoof1.src = 'sprites/roof1.png';
@@ -278,4 +298,9 @@ objectRoof31.src = 'sprites/roof31.png';
 
 objectFountain.src = 'sprites/fountain.png';
 
-hero.src = 'sprites/hero.png';
+hero.src = 'sprites/characters/hero.png';
+tMap3.src = 'sprites/characters/teacher3.png';
+tMap4.src = 'sprites/characters/teacher4.png';
+tMap71.src = 'sprites/characters/teacher71.png';
+tMap72.src = 'sprites/characters/teacher72.png';
+tMap8.src = 'sprites/characters/teacher8.png';
