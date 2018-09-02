@@ -516,6 +516,7 @@ window.onload = function() {
 	
 	objectsMap0();
 	objectsMap1();
+	objectsMap2();
 	
 	objectsMap3();
 	objectsMap4();
