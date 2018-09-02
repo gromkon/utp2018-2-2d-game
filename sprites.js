@@ -68,6 +68,14 @@ let water = new Image(),
     tMap72 = new Image(),
     tMap8 = new Image(),
     
+    object201 = new Image(),
+	object202 = new Image(),
+	object203 = new Image(),
+	object204 = new Image(),
+	object205 = new Image(),
+	object206 = new Image(),
+	object309 = new Image(),
+    
     waterLoaded = false,
     pathLoaded = false,
     asphaltLoaded = false,
@@ -136,6 +144,15 @@ let water = new Image(),
     objectFountainLoaded = false,
 
     heroLoaded = false,
+	
+	object201Loaded = false,
+	object202Loaded = false,
+	object203Loaded = false,
+    object204Loaded = false,
+	object205Loaded = false,
+	object206Loaded = false,
+	object309Loaded = false,
+	
     tMap3Loaded = false,
     tMap4Loaded = false,
     tMap71Loaded = false,
@@ -156,63 +173,71 @@ let loaded = {
 	11: { sprite: stairs, spriteLoaded: stairsLoaded },
     
 	12: { sprite: floor1, spriteLoaded: floor1Loaded },
-	44: { sprite: floor11, spriteLoaded: floor11Loaded },
-	45: { sprite: floor12, spriteLoaded: floor12Loaded },
-	13: { sprite: floor2, spriteLoaded: floor2Loaded },
-	50: { sprite: floor21, spriteLoaded: floor21Loaded },
-	51: { sprite: floor22, spriteLoaded: floor22Loaded },
-	14: { sprite: floor3, spriteLoaded: floor3Loaded },
-	15: { sprite: floor31, spriteLoaded: floor31Loaded },
-	16: { sprite: floor32, spriteLoaded: floor32Loaded },
-	17: { sprite: floorHall, spriteLoaded: floorHallLoaded },
+	13: { sprite: floor11, spriteLoaded: floor11Loaded },
+	14: { sprite: floor12, spriteLoaded: floor12Loaded },
+	15: { sprite: floor2, spriteLoaded: floor2Loaded },
+	16: { sprite: floor21, spriteLoaded: floor21Loaded },
+	17: { sprite: floor22, spriteLoaded: floor22Loaded },
+	18: { sprite: floor3, spriteLoaded: floor3Loaded },
+	19: { sprite: floor31, spriteLoaded: floor31Loaded },
+	20: { sprite: floor32, spriteLoaded: floor32Loaded },
+	21: { sprite: floorHall, spriteLoaded: floorHallLoaded },
     
-	18: { sprite: wall11, spriteLoaded: wall11Loaded },
-	19: { sprite: wall12, spriteLoaded: wall12Loaded },
-	20: { sprite: wall13, spriteLoaded: wall13Loaded },
-	21: { sprite: wall14, spriteLoaded: wall14Loaded },
+	22: { sprite: wall11, spriteLoaded: wall11Loaded },
+	23: { sprite: wall12, spriteLoaded: wall12Loaded },
+	24: { sprite: wall13, spriteLoaded: wall13Loaded },
+	25: { sprite: wall14, spriteLoaded: wall14Loaded },
 	
-	22: { sprite: tMap3, spriteLoaded: tMap3Loaded },
-	23: { sprite: tMap4, spriteLoaded: tMap4Loaded },
-	24: { sprite: tMap71, spriteLoaded: tMap71Loaded },
-	58: { sprite: tMap72, spriteLoaded: tMap72Loaded },
-	25: { sprite: tMap8, spriteLoaded: tMap8Loaded },
+	26: { sprite: tMap3, spriteLoaded: tMap3Loaded },
+	27: { sprite: tMap4, spriteLoaded: tMap4Loaded },
+	28: { sprite: tMap71, spriteLoaded: tMap71Loaded },
+	29: { sprite: tMap72, spriteLoaded: tMap72Loaded },
+	30: { sprite: tMap8, spriteLoaded: tMap8Loaded },
     
-	26: { sprite: corner11, spriteLoaded: corner11Loaded },
-	27: { sprite: corner12, spriteLoaded: corner12Loaded },
-	28: { sprite: corner13, spriteLoaded: corner13Loaded },
-	29: { sprite: corner14, spriteLoaded: corner14Loaded },
-	30: { sprite: corner15, spriteLoaded: corner15Loaded },
-	31: { sprite: corner16, spriteLoaded: corner16Loaded },
-	32: { sprite: corner17, spriteLoaded: corner17Loaded },
-	33: { sprite: corner18, spriteLoaded: corner18Loaded },
+	31: { sprite: corner11, spriteLoaded: corner11Loaded },
+	32: { sprite: corner12, spriteLoaded: corner12Loaded },
+	33: { sprite: corner13, spriteLoaded: corner13Loaded },
+	34: { sprite: corner14, spriteLoaded: corner14Loaded },
+	35: { sprite: corner15, spriteLoaded: corner15Loaded },
+	36: { sprite: corner16, spriteLoaded: corner16Loaded },
+	37: { sprite: corner17, spriteLoaded: corner17Loaded },
+	38: { sprite: corner18, spriteLoaded: corner18Loaded },
 	
-	46: { sprite: glass1, spriteLoaded: glass1Loaded },
-	47: { sprite: glass2, spriteLoaded: glass2Loaded },
-	48: { sprite: glass3, spriteLoaded: glass3Loaded },
-	49: { sprite: glass4, spriteLoaded: glass4Loaded },
+	39: { sprite: glass1, spriteLoaded: glass1Loaded },
+	40: { sprite: glass2, spriteLoaded: glass2Loaded },
+	41: { sprite: glass3, spriteLoaded: glass3Loaded },
+	42: { sprite: glass4, spriteLoaded: glass4Loaded },
 	
-	52: { sprite: door1, spriteLoaded: door1Loaded },
-	53: { sprite: door2, spriteLoaded: door2Loaded },
-	54: { sprite: door3, spriteLoaded: door3Loaded },
-	55: { sprite: door4, spriteLoaded: door4Loaded },
+	43: { sprite: door1, spriteLoaded: door1Loaded },
+	44: { sprite: door2, spriteLoaded: door2Loaded },
+	45: { sprite: door3, spriteLoaded: door3Loaded },
+	46: { sprite: door4, spriteLoaded: door4Loaded },
     
-	34: { sprite: objectTree, spriteLoaded: objectTreeLoaded },
+	47: { sprite: objectTree, spriteLoaded: objectTreeLoaded },
 	
-	35: { sprite: objectDesk1, spriteLoaded: objectDesk1Loaded },
-	36: { sprite: objectDesk2, spriteLoaded: objectDesk2Loaded },
-	56: { sprite: objectDesk3, spriteLoaded: objectDesk3Loaded },
+	48: { sprite: objectDesk1, spriteLoaded: objectDesk1Loaded },
+	49: { sprite: objectDesk2, spriteLoaded: objectDesk2Loaded },
+	50: { sprite: objectDesk3, spriteLoaded: objectDesk3Loaded },
 	
-	57: { sprite: objectBed, spriteLoaded: objectBedLoaded },
+	51: { sprite: objectBed, spriteLoaded: objectBedLoaded },
     	
-	37: { sprite: objectRoof, spriteLoaded: objectRoofLoaded },
-	38: { sprite: objectRoof1, spriteLoaded: objectRoof1Loaded },
-	39: { sprite: objectRoof2, spriteLoaded: objectRoof2Loaded },
-	40: { sprite: objectRoof3, spriteLoaded: objectRoof3Loaded },
-	41: { sprite: objectRoof31, spriteLoaded: objectRoof31Loaded },
+	52: { sprite: objectRoof, spriteLoaded: objectRoofLoaded },
+	53: { sprite: objectRoof1, spriteLoaded: objectRoof1Loaded },
+	54: { sprite: objectRoof2, spriteLoaded: objectRoof2Loaded },
+	55: { sprite: objectRoof3, spriteLoaded: objectRoof3Loaded },
+	56: { sprite: objectRoof31, spriteLoaded: objectRoof31Loaded },
     
-	42: { sprite: objectFountain, spriteLoaded: objectFountainLoaded },
+	57: { sprite: objectFountain, spriteLoaded: objectFountainLoaded },
     
-	43: { sprite: hero, spriteLoaded: heroLoaded }
+	58: { sprite: hero, spriteLoaded: heroLoaded },
+	
+	59: { sprite: object201, spriteLoaded: object201Loaded },
+	60: { sprite: object202, spriteLoaded: object202Loaded },
+	61: { sprite: object203, spriteLoaded: object203Loaded },
+	62: { sprite: object204, spriteLoaded: object204Loaded },
+	63: { sprite: object205, spriteLoaded: object205Loaded },
+	64: { sprite: object206, spriteLoaded: object206Loaded },
+	65: { sprite: object203, spriteLoaded: object309Loaded }
 }
 
 let isAllLoaded = true;
@@ -304,3 +329,11 @@ tMap4.src = 'sprites/characters/teacher4.png';
 tMap71.src = 'sprites/characters/teacher71.png';
 tMap72.src = 'sprites/characters/teacher72.png';
 tMap8.src = 'sprites/characters/teacher8.png';
+
+object201.src = 'sprites/201.png';
+object202.src = 'sprites/202.png';
+object203.src = 'sprites/203.png';
+object204.src = 'sprites/204.png';
+object205.src = 'sprites/205.png';
+object206.src = 'sprites/206.png';
+object309.src = 'sprites/309.png';

@@ -196,6 +196,91 @@ const objectTypes = {
 		offset: [-4, -30],
 		collision: objectCollision.solid,
 		zIndex: 2
+	},
+	17: {
+		name: "object201",
+		sp: object201,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 40,
+			h: 40
+		}],
+		offset: [0, 20],
+		collision: objectCollision.solid,
+		zIndex: 3
+	},
+	18: {
+		sp: object202,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 40,
+			h: 40
+		}],
+		offset: [0, 20],
+		collision: objectCollision.solid,
+		zIndex: 3
+	},
+	19: {
+		sp: object203,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 40,
+			h: 40
+		}],
+		offset: [0, 20],
+		collision: objectCollision.solid,
+		zIndex: 3
+	},
+	20: {
+		sp: object204,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 40,
+			h: 40
+		}],
+		offset: [0, 20],
+		collision: objectCollision.solid,
+		zIndex: 3
+	},
+	21: {
+		sp: object205,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 40,
+			h: 40
+		}],
+		offset: [0, 20],
+		collision: objectCollision.solid,
+		zIndex: 3
+	},
+	22: {
+		sp: object206,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 40,
+			h: 40
+		}],
+		offset: [0, 20],
+		collision: objectCollision.solid,
+		zIndex: 3
+	},
+	23: {
+		sp: object309,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 40,
+			h: 40
+		}],
+		offset: [0, 20],
+		collision: objectCollision.solid,
+		zIndex: 3
 	}
 }
 
