@@ -68,6 +68,14 @@ let water = new Image(),
     tMap72 = new Image(),
     tMap8 = new Image(),
     
+    object201 = new Image(),
+	object202 = new Image(),
+	object203 = new Image(),
+	object204 = new Image(),
+	object205 = new Image(),
+	object206 = new Image(),
+	object309 = new Image(),
+    
     waterLoaded = false,
     pathLoaded = false,
     asphaltLoaded = false,
@@ -136,6 +144,15 @@ let water = new Image(),
     objectFountainLoaded = false,
 
     heroLoaded = false,
+	
+	object201Loaded = false,
+	object202Loaded = false,
+	object203Loaded = false,
+    object204Loaded = false,
+	object205Loaded = false,
+	object206Loaded = false,
+	object309Loaded = false,
+	
     tMap3Loaded = false,
     tMap4Loaded = false,
     tMap71Loaded = false,
@@ -212,7 +229,15 @@ let loaded = {
     
 	42: { sprite: objectFountain, spriteLoaded: objectFountainLoaded },
     
-	43: { sprite: hero, spriteLoaded: heroLoaded }
+	43: { sprite: hero, spriteLoaded: heroLoaded },
+	
+	56: { sprite: object201, spriteLoaded: object201Loaded },
+	57: { sprite: object202, spriteLoaded: object202Loaded },
+	58: { sprite: object203, spriteLoaded: object203Loaded },
+	59: { sprite: object204, spriteLoaded: object204Loaded },
+	60: { sprite: object205, spriteLoaded: object205Loaded },
+	61: { sprite: object206, spriteLoaded: object206Loaded },
+	62: { sprite: object203, spriteLoaded: object309Loaded }
 }
 
 let isAllLoaded = true;
@@ -304,3 +329,11 @@ tMap4.src = 'sprites/characters/teacher4.png';
 tMap71.src = 'sprites/characters/teacher71.png';
 tMap72.src = 'sprites/characters/teacher72.png';
 tMap8.src = 'sprites/characters/teacher8.png';
+
+object201.src = 'sprites/201.png';
+object202.src = 'sprites/202.png';
+object203.src = 'sprites/203.png';
+object204.src = 'sprites/204.png';
+object205.src = 'sprites/205.png';
+object206.src = 'sprites/206.png';
+object309.src = 'sprites/309.png';
