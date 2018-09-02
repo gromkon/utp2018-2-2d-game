@@ -6,7 +6,6 @@ const objectCollision = {
 
 const objectTypes = {
 	1: {
-		name: "Tree",
 		sp: objectTree,
 		sprite: [{
 			x: 0,
@@ -19,33 +18,54 @@ const objectTypes = {
 		zIndex: 3
 	},
 	2: {
-		name: "Tall Grass",
-		sp: objectGrass,
+		sp: objectDesk1,
 		sprite: [{
 			x: 0,
 			y: 0,
-			w: 40,
-			h: 50
+			w: 80,
+			h: 40
 		}],
-		offset: [0, -10],
-		collision: objectCollision.none,
-		zIndex: 2
+		offset: [0, 0],
+		collision: objectCollision.solid,
+		zIndex: 1
 	},
 	3: {
-		name: "Stone",
-		sp: objectStone,
+		sp: objectDesk2,
 		sprite: [{
 			x: 0,
 			y: 0,
-			w: 40,
-			h: 44
+			w: 120,
+			h: 40
 		}],
-		offset: [0, -4],
+		offset: [0, 0],
 		collision: objectCollision.solid,
-		zIndex: 2
+		zIndex: 1
+	},
+	10: {
+		sp: objectDesk3,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 80,
+			h: 40
+		}],
+		offset: [0, 0],
+		collision: objectCollision.solid,
+		zIndex: 1
+	},
+	15: {
+		sp: objectBed,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 80,
+			h: 120
+		}],
+		offset: [0, 0],
+		collision: objectCollision.solid,
+		zIndex: 1
 	},
 	4: {
-		name: "Roof",
 		sp: objectRoof,
 		sprite: [{
 			x: 0,
@@ -58,7 +78,6 @@ const objectTypes = {
 		zIndex: 2
 	},
 	5: {
-		name: "Roof 1",
 		sp: objectRoof1,
 		sprite: [{
 			x: 0,
@@ -71,7 +90,6 @@ const objectTypes = {
 		zIndex: 3
 	},
 	6: {
-		name: "Roof 2",
 		sp: objectRoof2,
 		sprite: [{
 			x: 0,
@@ -84,7 +102,6 @@ const objectTypes = {
 		zIndex: 3
 	},
 	7: {
-		name: "Roof 3",
 		sp: objectRoof3,
 		sprite: [{
 			x: 0,
@@ -97,7 +114,6 @@ const objectTypes = {
 		zIndex: 3
 	},
 	8: {
-		name: "Roof 3 1",
 		sp: objectRoof31,
 		sprite: [{
 			x: 0,
@@ -110,7 +126,6 @@ const objectTypes = {
 		zIndex: 3
 	},
 	9: {
-		name: "Fountain",
 		sp: objectFountain,
 		sprite: [{
 			x: 0,
@@ -119,6 +134,54 @@ const objectTypes = {
 			h: 200
 		}],
 		offset: [-80, -95],
+		collision: objectCollision.solid,
+		zIndex: 2
+	},
+	11: {
+		sp: tMap3,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 44,
+			h: 72
+		}],
+		offset: [-4, -32],
+		collision: objectCollision.solid,
+		zIndex: 2
+	},
+	12: {
+		sp: tMap4,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 44,
+			h: 64
+		}],
+		offset: [-4, -24],
+		collision: objectCollision.solid,
+		zIndex: 2
+	},
+	13: {
+		sp: tMap7,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 44,
+			h: 66
+		}],
+		offset: [-4, -26],
+		collision: objectCollision.solid,
+		zIndex: 2
+	},
+	14: {
+		sp: tMap8,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 44,
+			h: 66
+		}],
+		offset: [-4, -32],
 		collision: objectCollision.solid,
 		zIndex: 2
 	}
