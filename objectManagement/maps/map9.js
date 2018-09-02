@@ -39,7 +39,23 @@ const desk901 = new MapObject(2),
 	  desk935 = new MapObject(2),
 	  
 	  desk936 = new MapObject(3),
-	  desk937 = new MapObject(3);
+	  desk937 = new MapObject(3),
+      
+      	  stud9_1 = new MapObject(24),
+      	  stud9_2 = new MapObject(28),
+      	  stud9_3 = new MapObject(30),
+      	  stud9_4 = new MapObject(31),
+          stud9_5 = new MapObject(34),
+          stud9_6 = new MapObject(42),
+          stud9_7 = new MapObject(43),
+          stud9_8 = new MapObject(44),
+          stud9_9 = new MapObject(33),
+          stud9_10 = new MapObject(35),
+          stud9_11 = new MapObject(48),
+          stud9_12 = new MapObject(49),
+          stud9_13 = new MapObject(38),
+          stud9_14 = new MapObject(25),
+          stud9_15 = new MapObject(40);
 
 function objectsMap9() {
 	
@@ -85,4 +101,22 @@ function objectsMap9() {
 	
 	desk936.placeAt(4, 3, 9);
 	desk937.placeAt(7, 3, 9);
+}
+
+function npcsMap9() {
+	stud9_1.placeAt(3, 7, 9);
+    	stud9_2.placeAt(5, 7, 9);
+    	stud9_3.placeAt(8, 7, 9);
+    	stud9_4.placeAt(9, 7, 9);
+    	stud9_5.placeAt(11, 9, 9);
+    	stud9_6.placeAt(6, 9, 9);
+    	stud9_7.placeAt(7, 9, 9);
+    	stud9_8.placeAt(3, 11, 9);
+    	stud9_9.placeAt(4, 11, 9);
+    	stud9_10.placeAt(5, 11, 9);
+    	stud9_11.placeAt(9, 11, 9);
+    	stud9_12.placeAt(9, 13, 9);
+    	stud9_13.placeAt(4, 17, 9);
+    	stud9_14.placeAt(5, 17, 9);
+    	stud9_15.placeAt(7, 15, 9);
 }
