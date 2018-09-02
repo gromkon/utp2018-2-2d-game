@@ -19,7 +19,19 @@ const teacher3 = new MapObject(11),
 	  desk317 = new MapObject(2),
 	  desk318 = new MapObject(2),
 	  desk319 = new MapObject(2),
-	  desk320 = new MapObject(2);
+	  desk320 = new MapObject(2),
+      
+    stud3_1 = new MapObject(24),
+	stud3_2 = new MapObject(29),
+	stud3_3 = new MapObject(48),
+	stud3_4 = new MapObject(49),
+	stud3_5 = new MapObject(31),
+	stud3_6 = new MapObject(35),
+	stud3_7 = new MapObject(38),
+	stud3_8 = new MapObject(44),
+	stud3_9 = new MapObject(26),
+	stud3_10 = new MapObject(30),
+	stud3_11 = new MapObject(40);
 
 function objectsMap3() {
 	
@@ -45,4 +57,18 @@ function objectsMap3() {
 	desk318.placeAt(9, 8, 3);
 	desk319.placeAt(9, 10, 3);
 	desk320.placeAt(9, 12, 3);
+}
+
+function npcsMap3() {
+	stud3_1.placeAt(1, 9, 3);
+	stud3_2.placeAt(2, 7, 3);
+	stud3_3.placeAt(5, 9, 3);
+	stud3_4.placeAt(6, 7, 3);
+	stud3_5.placeAt(5, 7, 3);
+	stud3_6.placeAt(4, 5, 3);
+	stud3_7.placeAt(5, 3, 3);
+	stud3_8.placeAt(7, 3, 3);
+	stud3_9.placeAt(10, 3, 3);
+	stud3_10.placeAt(9, 7, 3);
+	stud3_11.placeAt(10, 9, 3);
 }
