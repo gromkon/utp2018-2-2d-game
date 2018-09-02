@@ -211,7 +211,6 @@ const objectTypes = {
 		zIndex: 3
 	},
 	18: {
-		name: "object202",
 		sp: object202,
 		sprite: [{
 			x: 0,
@@ -224,7 +223,6 @@ const objectTypes = {
 		zIndex: 3
 	},
 	19: {
-		name: "object203",
 		sp: object203,
 		sprite: [{
 			x: 0,
@@ -237,7 +235,6 @@ const objectTypes = {
 		zIndex: 3
 	},
 	20: {
-		name: "object204",
 		sp: object204,
 		sprite: [{
 			x: 0,
@@ -250,7 +247,6 @@ const objectTypes = {
 		zIndex: 3
 	},
 	21: {
-		name: "object205",
 		sp: object205,
 		sprite: [{
 			x: 0,
@@ -263,7 +259,6 @@ const objectTypes = {
 		zIndex: 3
 	},
 	22: {
-		name: "object206",
 		sp: object206,
 		sprite: [{
 			x: 0,
@@ -276,7 +271,6 @@ const objectTypes = {
 		zIndex: 3
 	},
 	23: {
-		name: "object309",
 		sp: object309,
 		sprite: [{
 			x: 0,
