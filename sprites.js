@@ -61,8 +61,7 @@ let water = new Image(),
     
     objectFountain = new Image(),
     
-    hero = new Image(),
-	
+    hero = new Image(),	
     
     waterLoaded = false,
     pathLoaded = false,
