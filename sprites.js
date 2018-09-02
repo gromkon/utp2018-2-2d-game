@@ -75,6 +75,34 @@ let water = new Image(),
 	object205 = new Image(),
 	object206 = new Image(),
 	object309 = new Image(),
+	
+	student1 = new Image(),
+	student2 = new Image(),
+	student3 = new Image(),
+	student4 = new Image(),
+	student5 = new Image(),
+	student6 = new Image(),
+	student7 = new Image(),
+	student8 = new Image(),
+	student9 = new Image(),
+	student10 = new Image(),
+	student11 = new Image(),
+	student12 = new Image(),
+	student13 = new Image(),
+	student14 = new Image(),
+	student15 = new Image(),
+	student16 = new Image(),
+	student17 = new Image(),
+	student18 = new Image(),
+	student19 = new Image(),
+	student20 = new Image(),
+	student21 = new Image(),
+	student22 = new Image(),
+	student23 = new Image(),
+	student24 = new Image(),
+	student25 = new Image(),
+	student26 = new Image(),
+    student27 = new Image(),
     
     waterLoaded = false,
     pathLoaded = false,
@@ -157,7 +185,35 @@ let water = new Image(),
     tMap4Loaded = false,
     tMap71Loaded = false,
     tMap72Loaded = false,
-    tMap8Loaded = false;
+    tMap8Loaded = false,
+	
+	student1Loaded = false,
+	student2Loaded = false,
+	student3Loaded = false,
+	student4Loaded = false,
+	student5Loaded = false,
+	student6Loaded = false,
+	student7Loaded = false,
+	student8Loaded = false,
+	student9Loaded = false,
+	student10Loaded = false,
+	student11Loaded = false,
+	student12Loaded = false,
+	student13Loaded = false,
+	student14Loaded = false,
+	student15Loaded = false,
+	student16Loaded = false,
+	student17Loaded = false,
+	student18Loaded = false,
+	student19Loaded = false,
+	student20Loaded = false,
+	student21Loaded = false,
+	student22Loaded = false,
+	student23Loaded = false,
+	student24Loaded = false,
+	student25Loaded = false,
+	student26Loaded = false,
+    student27Loaded = false;
 
 let loaded = {
 	1: { sprite: water, spriteLoaded: waterLoaded },
@@ -237,7 +293,35 @@ let loaded = {
 	62: { sprite: object204, spriteLoaded: object204Loaded },
 	63: { sprite: object205, spriteLoaded: object205Loaded },
 	64: { sprite: object206, spriteLoaded: object206Loaded },
-	65: { sprite: object203, spriteLoaded: object309Loaded }
+	65: { sprite: object203, spriteLoaded: object309Loaded },
+	
+	67: { sprite: student1, spriteLoaded: student1Loaded },
+    68: { sprite: student2, spriteLoaded: student2Loaded },
+    69: { sprite: student3, spriteLoaded: student3Loaded },
+    70: { sprite: student4, spriteLoaded: student4Loaded },
+    71: { sprite: student5, spriteLoaded: student5Loaded },
+    72: { sprite: student6, spriteLoaded: student6Loaded },
+    73: { sprite: student7, spriteLoaded: student7Loaded },
+    74: { sprite: student8, spriteLoaded: student8Loaded },
+    75: { sprite: student9, spriteLoaded: student9Loaded },
+    76: { sprite: student10, spriteLoaded: student10Loaded },
+    77: { sprite: student11, spriteLoaded: student11Loaded },
+    78: { sprite: student12, spriteLoaded: student12Loaded },
+    79: { sprite: student13, spriteLoaded: student13Loaded },
+    80: { sprite: student14, spriteLoaded: student14Loaded },
+    81: { sprite: student15, spriteLoaded: student15Loaded },
+    82: { sprite: student16, spriteLoaded: student16Loaded },
+    83: { sprite: student17, spriteLoaded: student17Loaded },
+    84: { sprite: student18, spriteLoaded: student18Loaded },
+    85: { sprite: student19, spriteLoaded: student19Loaded },
+    86: { sprite: student20, spriteLoaded: student20Loaded },
+    87: { sprite: student21, spriteLoaded: student21Loaded },
+    88: { sprite: student22, spriteLoaded: student22Loaded },
+    89: { sprite: student23, spriteLoaded: student23Loaded },
+    90: { sprite: student24, spriteLoaded: student24Loaded },
+    91: { sprite: student25, spriteLoaded: student25Loaded },
+    92: { sprite: student26, spriteLoaded: student26Loaded },
+    93: { sprite: student27, spriteLoaded: student27Loaded }
 }
 
 let isAllLoaded = true;
@@ -337,3 +421,31 @@ object204.src = 'sprites/204.png';
 object205.src = 'sprites/205.png';
 object206.src = 'sprites/206.png';
 object309.src = 'sprites/309.png';
+
+student1.src = 'sprites/characters/npc/npc1.png';
+student2.src = 'sprites/characters/npc/npc2.png';
+student3.src = 'sprites/characters/npc/npc3.png';
+student4.src = 'sprites/characters/npc/npc4.png';
+student5.src = 'sprites/characters/npc/npc5.png';
+student6.src = 'sprites/characters/npc/npc6.png';
+student7.src = 'sprites/characters/npc/npc7.png';
+student8.src = 'sprites/characters/npc/npc8.png';
+student9.src = 'sprites/characters/npc/npc9.png';
+student10.src = 'sprites/characters/npc/npc10.png';
+student11.src = 'sprites/characters/npc/npc11.png';
+student12.src = 'sprites/characters/npc/npc12.png';
+student13.src = 'sprites/characters/npc/npc13.png';
+student14.src = 'sprites/characters/npc/npc14.png';
+student15.src = 'sprites/characters/npc/npc15.png';
+student16.src = 'sprites/characters/npc/npc16.png';
+student17.src = 'sprites/characters/npc/npc17.png';
+student18.src = 'sprites/characters/npc/npc18.png';
+student19.src = 'sprites/characters/npc/npc19.png';
+student20.src = 'sprites/characters/npc/npc20.png';
+student21.src = 'sprites/characters/npc/npc21.png';
+student22.src = 'sprites/characters/npc/npc22.png';
+student23.src = 'sprites/characters/npc/npc23.png';
+student24.src = 'sprites/characters/npc/npc24.png';
+student25.src = 'sprites/characters/npc/npc25.png';
+student26.src = 'sprites/characters/npc/npc26.png';
+student27.src = 'sprites/characters/npc/npc27.png';
