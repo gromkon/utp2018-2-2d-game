@@ -21,7 +21,9 @@ const desk00 = new MapObject(2),
 	  desk17 = new MapObject(2),
 	  desk18 = new MapObject(2),
 	  desk19 = new MapObject(2),
-	  desk20 = new MapObject(2);
+	  desk20 = new MapObject(2),
+      
+      	  stud5_1 = new MapObject(25);
 
 function objectsMap5() {
 	
@@ -50,4 +52,8 @@ function objectsMap5() {
 	desk18.placeAt(9, 8, 5);
 	desk19.placeAt(9, 10, 5);
 	desk20.placeAt(9, 12, 5);
+}
+
+function npcsMap5() {
+	stud5_1.placeAt(9, 5, 5);
 }

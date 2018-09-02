@@ -17,7 +17,15 @@ const desk600 = new MapObject(2),
 	  desk616 = new MapObject(2),
 	  desk617 = new MapObject(2),
 	  desk618 = new MapObject(2),
-	  desk619 = new MapObject(2);
+	  desk619 = new MapObject(2),
+      
+      	  stud6_1 = new MapObject(24),
+     	  stud6_2 = new MapObject(27),
+      	  stud6_3 = new MapObject(31),
+      	  stud6_4 = new MapObject(43),
+      	  stud6_5 = new MapObject(42),
+      	  stud6_6 = new MapObject(40),
+      	  stud6_7 = new MapObject(38);
 
 function objectsMap6() {
 	
@@ -42,4 +50,14 @@ function objectsMap6() {
 	desk617.placeAt(9, 6, 6);
 	desk618.placeAt(9, 8, 6);
 	desk619.placeAt(9, 10, 6);
+}
+
+function npcsMap6() {
+	stud6_1.placeAt(5, 5, 6);
+    stud6_2.placeAt(6, 5, 6);
+    stud6_3.placeAt(9, 7, 6);
+    stud6_4.placeAt(7, 9, 6);
+    stud6_5.placeAt(2, 7, 6);
+    stud6_6.placeAt(2, 5, 6);
+    stud6_7.placeAt(4, 7, 6);
 }
