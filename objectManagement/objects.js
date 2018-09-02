@@ -281,7 +281,331 @@ const objectTypes = {
 		offset: [0, 20],
 		collision: objectCollision.solid,
 		zIndex: 3
-	}
+	},
+	24: {
+		sp: student1,
+		sprite: [{
+			x: 0,
+			y: 0,
+			w: 44,
+			h: 64
+		}],
+		offset: [0, -10],
+		collision: objectCollision.solid,
+		zIndex: 1
+	},
+	25: {
+        sp: student2,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    26: {
+        sp: student3,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    27: {
+        sp: student4,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    28: {
+        sp: student5,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    29: {
+        sp: student6,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    30: {
+        sp: student7,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    31: {
+        sp: student8,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    32: {
+        sp: student9,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    33: {
+        sp: student10,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    34: {
+        sp: student11,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    35: {
+        sp: student12,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    36: {
+        sp: student13,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    37: {
+        sp: student14,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    38: {
+        sp: student15,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    39: {
+        sp: student16,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    40: {
+        sp: student17,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    41: {
+        sp: student18,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    42: {
+        sp: student19,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    43: {
+        sp: student20,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    44: {
+        sp: student21,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    45: {
+        sp: student22,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    46: {
+        sp: student23,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    47: {
+        sp: student24,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    48: {
+        sp: student25,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    49: {
+        sp: student26,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    },
+    50: {
+        sp: student27,
+        sprite: [{
+            x: 0,
+            y: 0,
+            w: 44,
+            h: 64
+        }],
+        offset: [0, -10],
+        collision: objectCollision.solid,
+        zIndex: 1
+    }
 }
 
 function MapObject(a) {
