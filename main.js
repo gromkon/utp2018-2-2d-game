@@ -516,6 +516,7 @@ window.onload = function() {
 	
 	objectsMap0();
 	objectsMap1();
+	objectsMap2();
 	
 	objectsMap3();
 	objectsMap4();
@@ -526,4 +527,12 @@ window.onload = function() {
 	objectsMap7();
 	objectsMap8();
 	objectsMap9();
+
+	npcsMap3();
+	npcsMap4();
+	npcsMap5();
+	npcsMap6();
+	npcsMap7();
+	npcsMap8();
+	npcsMap9();
 };

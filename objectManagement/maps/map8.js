@@ -41,7 +41,28 @@ const teacher8 = new MapObject(14),
 	  desk835 = new MapObject(2),
 	  
 	  desk836 = new MapObject(3),
-	  desk837 = new MapObject(3);
+	  desk837 = new MapObject(3),
+      
+          stud8_1 = new MapObject(25),
+	  stud8_2 = new MapObject(28),
+	  stud8_3 = new MapObject(32),
+	  stud8_4 = new MapObject(35),
+	  stud8_5 = new MapObject(40),
+	  stud8_6 = new MapObject(42),
+	  stud8_7 = new MapObject(43),
+	  stud8_8 = new MapObject(44),
+	  stud8_9 = new MapObject(45),
+	  stud8_10 = new MapObject(48),
+	  stud8_11 = new MapObject(49),
+	  stud8_12 = new MapObject(50),
+	  stud8_13 = new MapObject(26),
+	  stud8_14 = new MapObject(34),
+	  stud8_15 = new MapObject(30),
+	  stud8_16 = new MapObject(39),
+	  stud8_17 = new MapObject(33),
+	  stud8_18 = new MapObject(34),
+	  stud8_19 = new MapObject(38),
+	  stud8_20 = new MapObject(27);
 
 function objectsMap8() {
 	
@@ -89,4 +110,27 @@ function objectsMap8() {
 	
 	desk836.placeAt(4, 3, 8);
 	desk837.placeAt(7, 3, 8);
+}
+
+function npcsMap8() {
+	stud8_1.placeAt(7, 7, 8);
+	stud8_2.placeAt(10, 7, 8);
+	stud8_3.placeAt(5, 7, 8);
+	stud8_4.placeAt(3, 7, 8);
+	stud8_5.placeAt(4, 9, 8);
+	stud8_6.placeAt(6, 9, 8);
+	stud8_7.placeAt(8, 9, 8);
+	stud8_8.placeAt(11, 9, 8);
+	stud8_9.placeAt(9, 11, 8);
+	stud8_10.placeAt(5, 11, 8);
+	stud8_11.placeAt(2, 11, 8);
+	stud8_12.placeAt(3, 13, 8);
+	stud8_13.placeAt(6, 13, 8);
+	stud8_14.placeAt(8, 13, 8);
+	stud8_15.placeAt(10, 13, 8);
+	stud8_16.placeAt(9, 15, 8);
+	stud8_17.placeAt(5, 15, 8);
+	stud8_18.placeAt(2, 17, 8);
+	stud8_19.placeAt(7, 19, 8);
+	stud8_20.placeAt(8, 19, 8);
 }
